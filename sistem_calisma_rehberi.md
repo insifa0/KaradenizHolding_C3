@@ -71,6 +71,67 @@ Karadeniz AI, yerel verileri güvenli ve yetkilendirilmiş bir şekilde işleyen
 2. Sohbet penceresi otomatik olarak yeni mesaja kaydırılır.
 
 
+### 🛣️ 2.1. Uçtan Uca RAG Pipeline Akış Şeması
+
+Aşağıdaki şema, sistemin arka planda dökümanları işleme, arama yapma ve kullanıcıya güvenli cevap döndürme sürecini baştan sona temsil etmektedir:
+
+```mermaid
+graph TD
+    %% Styling
+    classDef init fill:#1e293b,stroke:#0ea5e9,stroke-width:2px,color:#fff;
+    classDef input fill:#1e293b,stroke:#f59e0b,stroke-width:2px,color:#fff;
+    classDef proc fill:#1e293b,stroke:#8b5cf6,stroke-width:2px,color:#fff;
+    classDef output fill:#1e293b,stroke:#10b981,stroke-width:2px,color:#fff;
+
+    %% 1. İndeksleme Pipeline'ı
+    subgraph "A. Veri Giriş & İndeksleme Pipeline'ı (Ingestion Pipeline)"
+        A1["Ornek yapay veri.txt"]:::init --> A2["Regex Parçalayıcı (ID Bazlı)"]:::init
+        A2 --> A3["Metadata & Yetki Çıkarımı"]:::init
+        A3 --> A4["Gemini Embedding (3072 Boyut)"]:::init
+        A4 --> A5[("ChromaDB Vektör Tabanı")]:::init
+    end
+
+    %% 2. RAG Pipeline'ı
+    subgraph "B. Çalışma Zamanı RAG Pipeline'ı (Retrieval & Generation)"
+        B1["Kullanıcı Sorusu ve Simüle Rol"]:::input --> B2["Gemini Embedding (Soru Vektörleştirme)"]:::input
+        B2 --> B3{"ChromaDB Arama"}:::proc
+        A5 -.-> B3
+        B3 -->|"Erişim Yetki Filtresi"| B4["Yetkili Benzer Belgeler (Context)"]:::proc
+        B4 --> B5["Sistem Promptu ve Sohbet Geçmişi (Son 4 Mesaj)"]:::proc
+        B5 --> B6["Gemini-2.5-Flash LLM"]:::proc
+        B6 --> B7["Cevap + Referans Belge Bilgisi"]:::proc
+    end
+
+    %% 3. Arayüz & Analitik Pipeline'ı
+    subgraph "C. Arayüz & Analitik Pipeline'ı (Feedback & KPI)"
+        B7 --> C1["Güvenlik Süzgeci (JS)"]:::output
+        C1 --> C2["Sohbet Ekranı ve Referans Kartları"]:::output
+        C2 --> C3["👍/👎 Geri Bildirim Butonları"]:::output
+        C3 --> C4["Canlı KPI Dashboard Güncellemesi"]:::output
+    end
+```
+
+### Pipeline Bileşenlerinin Detaylı Açıklaması
+
+1. **Veri Giriş (Ingestion) Aşaması:**
+   * **Okuma:** Prosedür, politika, talimat ve formlardan oluşan 120 dökümanlık ham metin okunur.
+   * **Ayrıştırma (Chunking):** Kod tabanındaki regex kuralları ile her döküman ID'si sınır kabul edilerek anlamsal birer parça (chunk) haline getirilir.
+   * **Metadata Zenginleştirme:** Dökümanların departmanı, erişim yetkisi seviyesi ve eş anlamlı anahtar kelimeleri otomatik tespit edilerek üstverilerine yazılır.
+   * **Vektörleştirme (Embedding):** Gemini modelinden geçen parçalar 3072 boyutlu anlamsal vektör dizisi olarak **ChromaDB**'ye kaydedilir.
+
+2. **Bilgi Getirme (Retrieval) Aşaması:**
+   * Kullanıcı sorusu anlık olarak vektörleştirilir.
+   * ChromaDB, sorunun vektörü ile dökümanların vektörleri arasındaki kosinüs benzerliğini hesaplar.
+   * **Yetki Koruması:** Kullanıcının seçtiği simüle rol dışındaki yetkisiz belgeler vektör tabanında doğrudan filtrelenerek LLM'e gönderilecek veri setinin dışında bırakılır.
+
+3. **Cevap Üretim (Generation) Aşaması:**
+   * Filtrelenmiş en yakın 3 döküman (bağlam/context), sistem promptu ve tarayıcıdan gelen **son 4 mesajlık sohbet geçmişi (Conversation Memory)** bir araya getirilerek tek bir komut şablonu oluşturulur.
+   * Gemini-2.5-Flash modeli, sadece bu dökümanlardaki bilgilere sadık kalarak kurumsal, net ve doğru bir yanıt üretir.
+
+4. **Sunum ve Analitik (Output & KPI) Aşaması:**
+   * **Güvenlik Süzgeci:** Arayüzdeki Javascript kontrolü, botun *"yetkiniz yok"* veya *"bilgi bulunamadı"* cevabı vermesi durumunda döküman referans kartlarını gizler.
+   * **Geri Bildirim Döngüsü:** Kullanıcının verdiği her 👍/👎 oy, oturum bazlı KPI metriklerini (Zaman Tasarrufu, Önlenen Bilet, Yanıt Başarı Oranı) gerçek zamanlı olarak günceller ve arayüzdeki dashboard'a yansıtır.
+
 ---
 
 ## 🔍 3. Gemini Embedding ve ChromaDB Derinlemesine İnceleme
@@ -114,7 +175,7 @@ Projenin mevcut yapısı yerel prototip seviyesindedir. Canlı (Production) orta
 
 1. **Güvenli Kimlik Doğrulama Eksikliği:** Kullanıcı sol paneldeki rolü manuel olarak değiştirebilmektedir. Bu durum jüri sunumu / simülasyonu için harikadır fakat gerçek hayatta veri sızıntılarına yol açar.
 2. **Girişlerin Şifrelenmemesi (API Key):** Gemini API anahtarı tarayıcı tarafında `localStorage` üzerinde düz metin olarak saklanmakta ve her istekte backend'e gönderilmektedir. Bu, API anahtarının çalınma riskini artırır.
-3. **Hafıza (Conversation Memory) Yokluğu:** Bot şu an tamamen stateless'tır (geçmişi hatırlamaz). Kullanıcı her soru sorduğunda yeni bir oturum açılmış gibi davranılır. Önceki konuşma geçmişi bağlama (context) eklenmemektedir.
+3. **Kalıcı Oturum Depolama (Long-term Memory) Eksikliği:** Projede konuşma akıcılığı için son 4 mesajlık kısa süreli hafıza (Short-term memory) aktiftir. Ancak oturum sonlandığında veya sayfa yenilendiğinde bu geçmiş silinir; kalıcı bir geçmiş depolaması yoktur.
 4. **Statik/Elle Yetki Ataması:** Dökümanların yetki seviyeleri dosya içeriğindeki kelimelerden regex ile tahmin edilmektedir. Dosyada ufacık bir yazım hatası yapılması, gizli bir belgenin tüm çalışanlara açılmasına yol açabilir.
 5. **Senkron Cevap Süresi:** Backend, cevabın tamamı üretilene kadar bekler. Bu durum, uzun cevaplarda kullanıcının 3-5 saniye boyunca boş ekrana bakmasına yol açar.
 
@@ -131,6 +192,6 @@ Projeyi kurumsal standartlara taşımak için aşağıdaki iyileştirmelerin yap
 
 ### B. Yapay Zeka ve RAG İyileştirmeleri
 - **Cevap Akışı (Streaming):** Server-Sent Events (SSE) kullanılarak, botun cevabı harf harf akıtılmalı (chatgpt gibi). Bu, kullanıcının bekleme deneyimini iyileştirir.
-- **Konuşma Geçmişi (Chat Memory):** Sorgularda önceki 3-4 mesajın özeti de Gemini'a gönderilerek "takip eden sorular" (örn: *"Peki o formun 2. maddesi ne anlama geliyor?"*) yanıtlanabilmelidir.
+- **Uzun Süreli Hafıza Deposu:** Sohbet geçmişini Redis veya PostgreSQL gibi kalıcı bir veritabanında saklayarak kullanıcının geçmiş konuşmalarına gün sonra bile ulaşabilmesi sağlanmalıdır.
 - **Hibrit Arama (Hybrid Search):** Hem kelime tabanlı arama (BM25) hem vektörel arama birleştirilerek (RRF - Reciprocal Rank Fusion ile) arama doğruluğu %99 seviyesine çıkarılmalıdır.
-- **Geri Bildirim Sistemi:** Mesajların yanına beğen/beğenme (👍/👎) butonları eklenerek hatalı cevaplar veri tabanına kaydedilmeli ve sistem yöneticisinin RAG parametrelerini optimize etmesi sağlanmalıdır.
+- **Geri Bildirim Toplama ve RLHF:** Sistemde kurulu olan 👍/👎 mekanizmasından gelen veriler kalıcı veri tabanında toplanarak RAG performansını artıracak ince ayarlama (Fine-Tuning) veya RLHF süreçlerinde girdi olarak kullanılmalıdır.
