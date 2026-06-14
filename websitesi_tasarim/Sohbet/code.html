@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Outfit:wght@400;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<title>Karadeniz AI - Sohbet</title>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(15, 35, 64, 0.6);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .glass-card {
+            background: rgba(15, 35, 64, 0.6);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .cyan-glow {
+            box-shadow: 0 0 20px rgba(0, 212, 230, 0.15);
+        }
+        .cyan-glow-focus:focus-within {
+            box-shadow: 0 0 25px rgba(0, 212, 230, 0.3);
+            border-color: #00d4e6;
+        }
+        .pulse-online {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 212, 230, 0.2);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 212, 230, 0.4);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-container": "#003439",
+                        "surface-container": "#18202d",
+                        "secondary-fixed": "#87f3ff",
+                        "on-error": "#690005",
+                        "surface-container-high": "#222a37",
+                        "on-tertiary-fixed-variant": "#354766",
+                        "on-tertiary": "#1e314e",
+                        "surface-container-lowest": "#060e1a",
+                        "on-primary": "#00363c",
+                        "surface-tint": "#1edaec",
+                        "surface-variant": "#2d3543",
+                        "on-primary-fixed": "#001f23",
+                        "inverse-surface": "#dbe3f4",
+                        "surface": "#0b1420",
+                        "outline": "#859395",
+                        "on-background": "#dbe3f4",
+                        "on-secondary-fixed-variant": "#004f55",
+                        "on-secondary-fixed": "#001f23",
+                        "error-container": "#93000a",
+                        "tertiary": "#ccddff",
+                        "secondary-container": "#00a6b3",
+                        "on-primary-container": "#00575f",
+                        "outline-variant": "#3b494b",
+                        "primary-container": "#00d4e6",
+                        "surface-dim": "#0b1420",
+                        "tertiary-container": "#aec1e6",
+                        "tertiary-fixed": "#d6e3ff",
+                        "inverse-primary": "#006972",
+                        "on-surface": "#dbe3f4",
+                        "primary-fixed": "#8df2ff",
+                        "on-error-container": "#ffdad6",
+                        "secondary": "#59d8e5",
+                        "on-surface-variant": "#bac9cb",
+                        "on-primary-fixed-variant": "#004f56",
+                        "primary": "#66efff",
+                        "secondary-fixed-dim": "#59d8e5",
+                        "surface-container-low": "#141c28",
+                        "error": "#ffb4ab",
+                        "on-tertiary-fixed": "#061b38",
+                        "surface-container-highest": "#2d3543",
+                        "on-tertiary-container": "#3d4f6e",
+                        "primary-fixed-dim": "#1edaec",
+                        "surface-bright": "#313a47",
+                        "background": "#0b1420",
+                        "inverse-on-surface": "#29313e",
+                        "on-secondary": "#00363b",
+                        "tertiary-fixed-dim": "#b4c7ec"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "20px",
+                        "container-max": "1440px",
+                        "gutter": "24px",
+                        "margin-desktop": "48px",
+                        "stack-gap": "16px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-md": ["Outfit"],
+                        "headline-lg": ["Outfit"],
+                        "label-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "headline-xl": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-xl": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+                    }
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background overflow-hidden h-screen font-body-md">
+<!-- Global Background Shader -->
+<!-- STITCH_SHADER_START:ANIMATION_17 class="absolute inset-0 w-full h-full z-0 opacity-50" -->
+<div class="absolute inset-0 w-full h-full z-0 opacity-50" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_17" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_17');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `precision highp float;
+varying vec2 v_texCoord;
+uniform float u_time;
+uniform vec2 u_resolution;
+
+void main() {
+    vec2 uv = v_texCoord;
+    
+    // Create a slow moving deep navy and cyan plasma effect
+    float noise = sin(uv.x * 3.0 + u_time * 0.5) * cos(uv.y * 3.0 - u_time * 0.3);
+    noise += sin(uv.y * 5.0 + u_time * 0.7) * cos(uv.x * 2.0 - u_time * 0.4);
+    
+    vec3 color1 = vec3(0.02, 0.05, 0.1); // Deep Navy
+    vec3 color2 = vec3(0.0, 0.1, 0.15);  // Slightly lighter navy
+    vec3 accent = vec3(0.0, 0.83, 0.9);   // Cyan/Turquoise glow
+    
+    vec3 finalColor = mix(color1, color2, noise * 0.5 + 0.5);
+    finalColor += accent * pow(max(0.0, noise), 8.0) * 0.2; // Subtle pulsing glows
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_17 -->
+<div class="relative z-10 flex h-full overflow-hidden">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full w-[280px] flex flex-col h-screen py-8 px-6 bg-opacity-40 bg-surface-container-low backdrop-blur-3xl border-r border-white/10 shadow-[0_0_20px_rgba(0,212,230,0.05)] z-30">
+<div class="mb-10">
+<h1 class="font-headline-md text-headline-md font-bold text-primary">Command Center</h1>
+<div class="flex items-center gap-2 mt-2">
+<div class="w-2 h-2 rounded-full bg-secondary pulse-online"></div>
+<p class="font-label-sm text-label-sm text-secondary">API: Online • System V2.4</p>
+</div>
+</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 py-3 px-4 rounded-xl text-primary font-bold border-r-2 border-primary bg-white/5 transition-all duration-300" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 rounded-xl text-on-surface-variant hover:bg-white/5 hover:text-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span class="font-label-md text-label-md">Intelligence</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 rounded-xl text-on-surface-variant hover:bg-white/5 hover:text-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined">directions_boat</span>
+<span class="font-label-md text-label-md">Energy Fleet</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 rounded-xl text-on-surface-variant hover:bg-white/5 hover:text-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-label-md text-label-md">Financials</span>
+</a>
+<a class="flex items-center gap-3 py-3 px-4 rounded-xl text-on-surface-variant hover:bg-white/5 hover:text-primary transition-all duration-300" href="#">
+<span class="material-symbols-outlined">security</span>
+<span class="font-label-md text-label-md">Security</span>
+</a>
+</nav>
+<div class="mt-auto pt-6 border-t border-white/10 space-y-4">
+<div class="space-y-2">
+<label class="text-label-sm text-on-surface-variant px-2">Access Credentials</label>
+<input class="w-full bg-surface-container-lowest border border-white/10 rounded-lg px-4 py-2 text-primary text-sm focus:outline-none focus:border-primary/50 transition-colors" placeholder="••••••••••••" type="password"/>
+</div>
+<button class="w-full py-3 bg-primary-container text-on-primary font-bold rounded-xl cyan-glow scale-95 active:scale-90 transition-transform">
+                    Authority Simulator
+                </button>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 py-2 px-4 rounded-xl text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-label-md text-label-md">Settings</span>
+</a>
+<a class="flex items-center gap-3 py-2 px-4 rounded-xl text-on-surface-variant hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-md text-label-md">Log Out</span>
+</a>
+</div>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<main class="flex-1 ml-[280px] flex flex-col h-screen relative">
+<!-- TopNavBar -->
+<header class="h-16 flex justify-between items-center px-gutter w-full bg-opacity-40 bg-surface-container backdrop-blur-[32px] border-b border-white/10 z-20">
+<div class="flex items-center gap-4">
+<div class="font-headline-md text-headline-md font-black text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">directions_boat</span>
+                        Karadeniz AI
+                    </div>
+<nav class="hidden md:flex items-center gap-8 ml-8">
+<a class="text-primary border-b-2 border-primary pb-1 font-label-md text-label-md" href="#">Chat</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Library</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-label-md text-label-md" href="#">Azure Plan</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative flex items-center bg-surface-container-lowest rounded-full px-4 py-1.5 border border-white/5">
+<span class="material-symbols-outlined text-on-surface-variant text-lg">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 text-on-surface" placeholder="Intelligence search..." type="text"/>
+</div>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary/30">
+<img alt="User avatar" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYb-m7ckKi6aJHNxhls3EHw8nEAI6fc-xO8HD_gA-I2iam2NMbtFhCOcELkqeE2B_F6G_XiaVw4dZgWfcPxiHm8XJHhNj1gNUbSToj1j0zC5yr1R0IkmdA4PKbhYbthj0NEsXWWq5o8UnszMK3D1KBiCLhD_BOLH6e1TX-iAF_wumR47K36OboYTCodhs1HIPIJi8c4hzAoxHgcBxfws3aeG36e2TrROeD1D1Y3CLJNJNzwO1B3jCOfoOOkyEPY4lTNepuCBLgH1ab"/>
+</div>
+</div>
+</header>
+<!-- Chat Canvas -->
+<section class="flex-1 overflow-y-auto pt-10 pb-32 px-gutter scroll-smooth">
+<div class="max-w-4xl mx-auto space-y-12">
+<!-- System Welcome (Intro Message) -->
+<div class="flex flex-col items-center text-center space-y-4 mb-16">
+<div class="w-20 h-20 rounded-3xl bg-primary/10 flex items-center justify-center border border-primary/20 cyan-glow">
+<span class="material-symbols-outlined text-4xl text-primary" style="font-variation-settings: 'FILL' 1">psychology</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Sohbet - Kurumsal Bilgi Asistanı</h2>
+<p class="text-on-surface-variant max-w-lg font-body-md">Karadeniz Holding global veri tabanına, operasyonel zekaya ve teknik dökümantasyona güvenli erişim portalı.</p>
+</div>
+<!-- Chat Messages -->
+<div class="space-y-8">
+<!-- User Message -->
+<div class="flex justify-end">
+<div class="max-w-[80%] px-6 py-4 rounded-2xl rounded-tr-none glass-card bg-primary-container/10 border-primary/20 text-on-background shadow-lg">
+<p class="text-body-md">Karpowership filosundaki güncel enerji üretim kapasitelerini raporlar mısın?</p>
+<span class="block mt-2 text-[10px] text-primary/60 font-bold uppercase tracking-wider">Gönderildi • 10:42</span>
+</div>
+</div>
+<!-- Assistant Message -->
+<div class="flex flex-col space-y-4">
+<div class="flex gap-4 items-start">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high border border-white/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-xl">smart_toy</span>
+</div>
+<div class="max-w-[85%] px-6 py-4 rounded-2xl rounded-tl-none glass-card bg-surface-container-high/40 border-white/10 text-on-surface shadow-xl">
+<p class="text-body-md leading-relaxed">
+                                        Tabii, Karadeniz Holding Karpowership filosunun güncel verilerine göre; şu an aktif 36 gemimizle 6,000 MW'ın üzerinde kurulu güce sahibiz. 
+                                        Özellikle Batı Afrika ve Latin Amerika bölgelerindeki yeni projelerle birlikte operasyonel verimlilik %94 seviyesine ulaşmıştır.
+                                    </p>
+<span class="block mt-2 text-[10px] text-on-surface-variant font-bold uppercase tracking-wider">Karadeniz AI • Analiz Tamamlandı</span>
+</div>
+</div>
+<!-- Resources Cards (Expandable style) -->
+<div class="ml-14 grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="glass-card p-4 border-primary/30 rounded-xl hover:border-primary transition-all cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined text-lg">description</span>
+</div>
+<div>
+<p class="font-label-md text-label-md group-hover:text-primary transition-colors">Q3 Filo Raporu.pdf</p>
+<p class="text-[10px] text-on-surface-variant">2.4 MB • Teknik Döküman</p>
+</div>
+</div>
+</div>
+<div class="glass-card p-4 border-primary/30 rounded-xl hover:border-primary transition-all cursor-pointer group">
+<div class="flex items-center gap-3">
+<div class="p-2 bg-primary/10 rounded-lg text-primary">
+<span class="material-symbols-outlined text-lg">analytics</span>
+</div>
+<div>
+<p class="font-label-md text-label-md group-hover:text-primary transition-colors">Operasyonel Veri Analizi</p>
+<p class="text-[10px] text-on-surface-variant">Canlı Veri • Dashboard Bağlantısı</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- User Message 2 -->
+<div class="flex justify-end">
+<div class="max-w-[80%] px-6 py-4 rounded-2xl rounded-tr-none glass-card bg-primary-container/10 border-primary/20 text-on-background shadow-lg">
+<p class="text-body-md">Gana'daki Powership'in yakıt ikmal planını göster.</p>
+<span class="block mt-2 text-[10px] text-primary/60 font-bold uppercase tracking-wider">Gönderildi • 10:45</span>
+</div>
+</div>
+<!-- Assistant Message 2 (Thinking State example) -->
+<div class="flex gap-4 items-start">
+<div class="w-10 h-10 rounded-xl bg-surface-container-high border border-white/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary text-xl">smart_toy</span>
+</div>
+<div class="max-w-[85%] px-6 py-4 rounded-2xl rounded-tl-none glass-card bg-surface-container-high/40 border-white/10 text-on-surface shadow-xl flex items-center gap-3">
+<div class="flex gap-1">
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-bounce" style="animation-delay: 0s"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-bounce" style="animation-delay: 0.2s"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-bounce" style="animation-delay: 0.4s"></div>
+</div>
+<p class="text-label-md text-on-surface-variant italic">Lojistik veriler işleniyor...</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Chat Input Area -->
+<footer class="absolute bottom-0 left-0 w-full p-8 bg-gradient-to-t from-background to-transparent pointer-events-none">
+<div class="max-w-4xl mx-auto pointer-events-auto">
+<div class="glass-panel p-2 rounded-2xl border-white/10 cyan-glow-focus transition-all flex items-center gap-2">
+<button class="p-3 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">attach_file</span>
+</button>
+<input class="flex-1 bg-transparent border-none focus:ring-0 text-on-surface font-body-md placeholder:text-on-surface-variant/50 px-2 py-3" placeholder="Karadeniz AI'a bir soru sorun..." type="text"/>
+<button class="p-3 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined">mic</span>
+</button>
+<button class="bg-primary-container text-on-primary p-3 rounded-xl cyan-glow flex items-center justify-center active:scale-95 transition-transform">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">send</span>
+</button>
+</div>
+<p class="text-center mt-3 text-[10px] text-on-surface-variant/40 uppercase tracking-widest font-bold">
+                        Sistem Güvenli • AES-256 Şifreleme Aktif
+                    </p>
+</div>
+</footer>
+</main>
+</div>
+<!-- Decoration Glows -->
+<div class="fixed top-[-10%] right-[-10%] w-[500px] h-[500px] bg-primary/10 blur-[120px] rounded-full pointer-events-none z-0"></div>
+<div class="fixed bottom-[-10%] left-[20%] w-[600px] h-[600px] bg-secondary/5 blur-[150px] rounded-full pointer-events-none z-0"></div>
+<script>
+        // Simple micro-interaction for input glow
+        const chatInput = document.querySelector('input[type="text"]');
+        const inputContainer = chatInput.closest('.glass-panel');
+
+        chatInput.addEventListener('focus', () => {
+            inputContainer.classList.add('border-primary/50');
+        });
+
+        chatInput.addEventListener('blur', () => {
+            inputContainer.classList.remove('border-primary/50');
+        });
+    </script>
+</body></html>

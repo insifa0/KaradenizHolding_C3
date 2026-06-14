@@ -1,0 +1,593 @@
+Karadeniz Holding Kurumsal Prosedürler Veri Seti (Chatbot Bilgi Tabanı)
+Bu belge, "Senaryo 2: Kurumsal Bilgiye Erişim Problemi" kapsamında tasarlanacak yapay zeka destekli kurumsal chatbot (veya Copilot Studio bilgi tabanı) için örnek veri setini oluşturmaktadır. Belge içerisinde holding yapısına uygun kodlanmış, amaç, kapsam ve kısa içerik bilgileriyle detaylandırılmış 30 farklı prosedür yer almaktadır.
+I. İnsan Kaynakları (İK) Prosedürleri
+1. İK-PR-01: İşe Alım ve Oryantasyon Prosedürü
+Amaç: Holding bünyesine katılacak yeni yeteneklerin objektif kriterlerle seçilmesi ve şirkete uyum süreçlerinin hızlandırılması.
+Kapsam: Tüm holding ve bağlı ortaklıklardaki tam zamanlı, yarı zamanlı ve stajyer pozisyonları.
+Kilit Bilgiler: İşe alım onay süreçleri, mülakat aşamaları, 2 haftalık standart oryantasyon programı ve mentor atama kuralları.
+2. İK-PR-02: Performans Değerlendirme Prosedürü
+Amaç: Çalışanların bireysel hedeflerinin holding stratejik hedefleriyle hizalanması ve yıl içi gelişimlerinin izlenmesi.
+Kapsam: Deneme süresini tamamlamış tüm kadrolu çalışanlar.
+Kilit Bilgiler: Yılda iki kez (Ara Değerlendirme - Temmuz, Yıl Sonu Değerlendirmesi - Aralık) yapılan değerlendirme döngüsü, 360 derece geri bildirim metodolojisi ve performans skorlama kriterleri.
+3. İK-PR-03: Eğitim ve Gelişim Prosedürü
+Amaç: Çalışanların mesleki ve kişisel yetkinliklerini artıracak eğitim ihtiyaçlarının belirlenmesi ve bütçelendirilmesi.
+Kapsam: Tüm grup çalışanları.
+Kilit Bilgiler: Yıllık eğitim ihtiyaç analizi formu doldurma süreci, dış eğitim bütçe onay limitleri ve eğitim sonrası zorunlu bilgi paylaşım yükümlülükleri.
+4. İK-PR-04: Yıllık Ücretli İzin ve Mazeret İzni Prosedürü
+Amaç: Çalışanların dinlenme haklarının ve mazeret durumlarındaki izin süreçlerinin yasal mevzuata uyumlu şekilde düzenlenmesi.
+Kapsam: Tüm lokasyonlardaki sözleşmeli personel.
+Kilit Bilgiler: İzin taleplerinin en az 5 iş günü önceden İK sistemi üzerinden yapılması gerekliliği, kıdeme göre hak edilen izin günleri ve mazeret (evlilik, ölüm, doğum vb.) izin süreleri limitleri.
+5. İK-PR-05: İşten Ayrılış ve İlişik Kesme Prosedürü
+Amaç: İş akdi sona eren çalışanların çıkış süreçlerinin yasal, idari ve bilgi güvenliği açılarından sorunsuz tamamlanması.
+Kapsam: İstifa eden veya iş akdi feshedilen tüm çalışanlar.
+Kilit Bilgiler: İhbar süreleri, teslim edilmesi gereken zimmetli cihazlar listesi, kullanıcı hesaplarının kapatılması takvimi ve çıkış mülakatı süreci.
+6. İK-PR-06: Uzaktan Çalışma ve Hibrit Model Prosedürü
+Amaç: Ofis dışından çalışma süreçlerinde iş sürekliliğinin, veri güvenliğinin ve çalışan refahının korunması.
+Kapsam: Görevi uzaktan çalışmaya uygun olan merkez ofis çalışanları.
+Kilit Bilgiler: Haftalık maksimum 2 gün uzaktan çalışma limiti, çalışma saatleri (08:30-17:30) disiplini ve ergonomi destek paketleri talep şartları.
+7. İK-PR-07: Disiplin ve Davranış Kuralları Prosedürü
+Amaç: İş yerinde etik, saygılı ve profesyonel bir çalışma ortamının sürdürülmesi için gerekli kuralların belirlenmesi.
+Kapsam: Tüm kademelerdeki Karadeniz Holding çalışanları.
+Kilit Bilgiler: Disiplin kurulu oluşumu, uyarı, kınama ve fesih gerektiren ihlaller ile savunma isteme süreçlerinin detayları.
+II. Bilgi Teknolojileri (BT) Prosedürleri
+8. BT-PR-01: Bilgi Güvenliği ve Kabul Edilebilir Kullanım Prosedürü
+Amaç: Holding bilgi varlıklarının siber tehditlere, veri sızıntılarına ve yetkisiz erişimlere karşı korunması.
+Kapsam: Şirket ağına bağlanan tüm kullanıcılar ve dış yükleniciler.
+Kilit Bilgiler: Şirket bilgisayarlarında lisanssız yazılım kullanım yasağı, taşınabilir bellek (USB) kullanım kısıtlamaları ve e-posta güvenliği kuralları.
+9. BT-PR-02: Veri Yedekleme ve Kurtarma Prosedürü
+Amaç: Sistem arızaları veya siber saldırı durumlarında veri kaybını önlemek amacıyla kritik verilerin yedeklenme standartlarının belirlenmesi.
+Kapsam: Holding sunucuları, bulut sistemleri ve veri tabanları.
+Kilit Bilgiler: Günlük, haftalık ve aylık yedekleme takvimleri, yedeklerin fiziksel olarak farklı lokasyonlarda/bulutta saklanması kuralları ve yılda iki kez yapılan kurtarma testleri.
+10. BT-PR-03: BT Varlık Yönetimi ve Zimmet Prosedürü
+Amaç: Bilgisayar, telefon, tablet gibi BT donanımlarının satın alınması, envantere kaydedilmesi ve çalışanlara tahsisi.
+Kapsam: Şirket tarafından sağlanan tüm donanımlar.
+Kilit Bilgiler: Kullanıcı segmentine göre donanım standartları (Developer, Ofis vb.), cihaz yenileme periyotları (standart 4 yıl) ve hasar durumunda uygulanacak prosedürler.
+11. BT-PR-04: Erişim Yetkilendirme ve Şifre Güvenliği Prosedürü
+Amaç: Kurumsal sistemlere erişimlerin "bilmesi gereken" ve "en az yetki" prensiplerine göre yönetilmesi.
+Kapsam: Aktif Dizin, ERP, CRM ve diğer tüm kurumsal uygulamalar.
+Kilit Bilgiler: Şifre karmaşıklık kuralları (en az 12 karakter, büyük/küçük harf, rakam ve özel karakter), 90 günde bir zorunlu şifre değişimi ve Çok Faktörlü Kimlik Doğrulama (MFA) zorunluluğu.
+12. BT-PR-05: Siber Olay Müdahale Prosedürü
+Amaç: Olası bir siber saldırı veya güvenlik ihlali durumunda etkin, hızlı ve koordineli bir yanıt verilmesi.
+Kapsam: BT Güvenlik Ekibi ve kriz yönetim masası.
+Kilit Bilgiler: Olay önceliklendirme matrisi (Düşük, Orta, Yüksek, Kritik), ilk müdahale adımları, sistemlerin izolasyonu ve yönetim kurulu bilgilendirme şablonları.
+III. Satın Alma ve Sözleşme (SA) Prosedürleri
+13. SA-PR-01: Tedarikçi Seçimi ve Değerlendirme Prosedürü
+Amaç: Mal ve hizmet tedarik edilen firmaların mali, teknik ve etik açılardan değerlendirilmesi ve onaylı tedarikçi listesinin oluşturulması.
+Kapsam: Tüm yerli ve yabancı tedarikçi adayları.
+Kilit Bilgiler: Tedarikçi ön değerlendirme soru formu, finansal rasyoların analizi, referans kontrolleri ve yılda bir kez yapılan tedarikçi performans puanlaması.
+14. SA-PR-02: Mal ve Hizmet Alımı Prosedürü
+Amaç: İhtiyaç duyulan tüm mal ve hizmetlerin en uygun fiyat, kalite ve teslim süresi dengesiyle satın alınması.
+Kapsam: Doğrudan veya dolaylı satın alma talebi oluşturan tüm departmanlar.
+Kilit Bilgiler: Satın alma talep formunun ERP üzerinden açılması, tutara göre gereken minimum teklif sayısı (örneğin 50.000 USD üzeri için en az 3 teklif) ve onay matrisi.
+15. SA-PR-03: Sözleşme Yönetimi Prosedürü
+Amaç: Üçüncü taraflarla akdedilecek sözleşmelerin hazırlanması, incelenmesi, imzalanması ve arşivlenmesi adımlarının standartlaştırılması.
+Kapsam: Holding tüzel kişiliklerinin taraf olduğu tüm sözleşmeler.
+Kilit Bilgiler: Hukuk departmanının standart sözleşme şablonlarının kullanımı, revizyon takip usulleri, imza sirkülerine göre yetki sınırları ve sözleşmelerin dijital arşivleme kuralları.
+IV. Finans ve Muhasebe (FN) Prosedürleri
+16. FN-PR-01: Masraf Beyanı ve Ödeme Prosedürü
+Amaç: Çalışanların iş amaçlı yaptığı harcamaların hızlı ve şeffaf bir şekilde geri ödenmesi ve muhasebeleştirilmesi.
+Kapsam: Tüm grup şirketleri çalışanları.
+Kilit Bilgiler: Masrafların her ayın en geç 25'ine kadar sisteme girilmesi, fiş/fatura asıllarının teslimi, temsil-ağırlama limitleri ve seyahat harcamaları kuralları.
+17. FN-PR-02: Bütçe Hazırlama ve Revizyon Prosedürü
+Amaç: Gelecek döneme ait gelir, gider ve yatırım tahminlerinin holding stratejisine uygun olarak bütçelenmesi.
+Kapsam: Tüm bütçe sahipleri ve departman yöneticileri.
+Kilit Bilgiler: Bütçe hazırlık takvimi (Eylül-Kasım), bütçe sapma analiz raporlamaları ve yıl ortası (Haziran) bütçe revizyon kuralları.
+18. FN-PR-03: Nakit Yönetimi ve Ödemeler Prosedürü
+Amaç: Holding likiditesinin optimum yönetimi, banka ilişkileri ve tedarikçi ödemelerinin güvenli ve zamanında yapılması.
+Kapsam: Finans ve Hazine departmanı.
+Kilit Bilgiler: Haftalık nakit akış tablolarının hazırlanması, talimat gönderme onay süreçleri, çift imza kuralı ve döviz pozisyonu risk yönetimi sınırları.
+V. İş Sağlığı ve Güvenliği (İSG) Prosedürleri
+19. İSG-PR-01: İş Sağlığı ve Güvenliği Genel Prosedürü
+Amaç: Güvenli bir çalışma ortamı sağlamak, iş kazalarını ve meslek hastalıklarını önlemek adına genel İSG kurallarının tanımlanması.
+Kapsam: Ofisler, santraller, gemiler ve tüm çalışma sahaları.
+Kilit Bilgiler: İSG kurulları çalışma esasları, risk analizi yapma yöntemleri, işe giriş sağlık raporları ve periyodik sağlık taramaları sıklıkları.
+20. İSG-PR-02: Acil Durum ve Tahliye Prosedürü
+Amaç: Yangın, deprem, sabotaj gibi acil durumlarda can ve mal kaybını en aza indirmek için yapılacak eylemler.
+Kapsam: Tüm holding yerleşkeleri.
+Kilit Bilgiler: Acil durum ekiplerinin (söndürme, kurtarma, koruma, ilk yardım) kurulması, tahliye güzergahları ve her lokasyonda yılda en az bir kez yapılması zorunlu acil durum tatbikatları.
+21. İSG-PR-03: İş Kazası Bildirim ve Araştırma Prosedürü
+Amaç: Meydana gelen iş kazalarının ve ramak kala olayların analiz edilerek kök nedenlerinin bulunması ve tekrarının önlenmesi.
+Kapsam: Tüm şirket lokasyonlarında gerçekleşen olaylar.
+Kilit Bilgiler: Kazanın yasal süre (3 iş günü) içinde SGK'ya bildirilmesi, kaza araştırma raporu formatı ve aksiyon takip mekanizmaları.
+22. İSG-PR-04: Kişisel Koruyucu Donanım (KKD) Kullanım Prosedürü
+Amaç: Çalışma alanlarındaki fiziksel ve kimyasal risklere karşı çalışanların doğru koruyucu ekipmanları kullanmasının sağlanması.
+Kapsam: Enerji santralleri, tersaneler, gemiler ve saha ziyaretçileri.
+Kilit Bilgiler: Baret, çelik burunlu ayakkabı, emniyet kemeri, koruyucu gözlük ve kulaklıkların zimmetleme, saklama ve kullanım kuralları.
+VI. Operasyon ve Denizcilik (OP) Prosedürleri
+23. OP-PR-01: Gemi ve Santral Bakım-Onarım Prosedürü
+Amaç: Karpowership (yüzer enerji gemileri) filosunun ve kara santrallerinin kesintisiz enerji üretebilmesi için planlı bakım süreçlerinin yürütülmesi.
+Kapsam: Teknik operasyon ekipleri, gemi başmühendisleri.
+Kilit Bilgiler: Planlı Bakım Sistemi (PMS) kullanımı, parça değişim ömürleri, plansız arıza duruşlarında devreye giren teknik destek protokolleri.
+24. OP-PR-02: Sefer ve Lojistik Yönetimi Prosedürü
+Amaç: Güç gemilerinin (Powership) ve destek gemilerinin uluslararası sularda güvenli, verimli ve kurallara uygun seyrinin planlanması.
+Kapsam: Denizcilik operasyonları koordinasyon merkezi, gemi kaptanları.
+Kilit Bilgiler: Rota planlama parametreleri, liman otoriteleriyle iletişim protokolleri, yakıt (bunker) ikmal prosedürleri ve hava durumu takip sistemleri kullanımı.
+25. OP-PR-03: Envanter ve Depo Yönetimi Prosedürü
+Amaç: Yedek parça ve sarf malzemelerinin stok seviyelerinin optimumda tutulması, kayıp ve hasarların önlenmesi.
+Kapsam: Depo sorumluları ve saha operasyon personeli.
+Kilit Bilgiler: Minimum-maksimum stok seviyeleri kontrolü, barkodlu stok takip sistemi, sayım periyotları (yılda iki kez genel sayım) ve hurdaya ayırma kuralları.
+VII. Kurumsal İletişim (Kİ) Prosedürleri
+26. Kİ-PR-01: Kurumsal Kimlik ve Marka İletişimi Prosedürü
+Amaç: Karadeniz Holding ve bağlı markaların (Karpowership vb.) tüm basılı ve dijital mecralarda görsel/sözel bütünlüğünün korunması.
+Kapsam: Tüm şirket içi ve dışı iletişim materyalleri.
+Kilit Bilgiler: Logo kullanım standartları, kurumsal renk kodları (Hex, RGB, CMYK), sunum şablonları kuralları ve sponsorluk başvuru değerlendirme kriterleri.
+27. Kİ-PR-02: Sosyal Medya Kullanım Prosedürü
+Amaç: Çalışanların kişisel sosyal medya kullanımlarında holding itibarını zedeleyecek durumların önüne geçilmesi.
+Kapsam: Tüm grup çalışanları.
+Kilit Bilgiler: Şirket içi gizli bilgi veya saha görsellerinin kişisel hesaplarda paylaşım yasağı, holding adına açıklama yapma yetki sınırları ve kriz anında sosyal medya duruş kuralları.
+VIII. Hukuk, Etik ve Uyum (HK) Prosedürleri
+28. HK-PR-01: KVKK ve Veri Gizliliği Prosedürü
+Amaç: Kişisel Verilerin Korunması Kanunu (KVKK) ve GDPR kapsamında kişisel verilerin hukuka uygun işlenmesi ve saklanması.
+Kapsam: Müşteri, tedarikçi, çalışan ve aday verilerini işleyen tüm departmanlar.
+Kilit Bilgiler: Veri envanteri tutma zorunluluğu, aydınlatma metinleri ve açık rıza formlarının kullanımı, veri sızıntısı şüphesinde 72 saat içinde Kurul'a bildirim kuralı.
+29. HK-PR-02: Etik Kurallar ve Yolsuzlukla Mücadele Prosedürü
+Amaç: Holdingin 17 ülkedeki tüm operasyonlarında rüşvet, yolsuzluk, çıkar çatışması ve usulsüzlüklerin önlenmesi.
+Kapsam: Tüm yönetim kurulu üyeleri, yöneticiler, çalışanlar ve iş ortakları.
+Kilit Bilgiler: Hediye alma ve verme limitleri, çıkar çatışması beyan formu doldurma zorunluluğu ve isimsiz etik bildirim hattı (Etik Hattı) kullanım usulü.
+30. HK-PR-03: İç Denetim ve Uyumluluk Prosedürü
+Amaç: Şirket içi süreçlerin holding politikalarına, yasalara ve uluslararası standartlara uygunluğunun tarafsız şekilde denetlenmesi.
+Kapsam: Tüm holding departmanları ve yurt dışı lokasyonlar.
+Kilit Bilgiler: Yıllık denetim planının oluşturulması, habersiz denetim usulleri, bulguların raporlanması ve departmanların düzeltici-önleyici aksiyon alma süreleri limitleri.
+Karadeniz Holding Kurumsal Politikalar Veri Seti (Chatbot Bilgi Tabanı)
+Bu belge, "Senaryo 2: Kurumsal Bilgiye Erişim Problemi" kapsamında tasarlanacak yapay zeka chatbotu için yüksek düzeyli kurumsal kuralları ve ilkeleri içeren 30 farklı politikayı kapsamaktadır.
+I. İnsan Kaynakları (İK) Politikaları
+1. İK-PO-01: Fırsat Eşitliği, Çeşitlilik ve Kapsayıcılık Politikası
+Amaç: Din, dil, ırk, cinsiyet, uyruk veya fiziksel engel gözetmeksizin tüm çalışanlara adil ve eşit bir çalışma ortamı sunulması.
+Temel İlkeler: İşe alım, terfi, ücretlendirme ve eğitim süreçlerinde yalnızca liyakat ve performans kriterleri esas alınır. Her türlü ayrımcılık ve mobbinge karşı sıfır tolerans gösterilir.
+2. İK-PO-02: Esnek ve Hibrit Çalışma Politikası
+Amaç: İş-özel yaşam dengesini koruyarak çalışan memnuniyetini ve verimliliğini artırmak.
+Temel İlkeler: Görevi fiziki katılım gerektirmeyen tüm rollerde hibrit çalışma modeli desteklenir. Çekirdek çalışma saatleri (10:00 - 16:00) dışında kalan zamanlarda esneklik tanınır.
+3. İK-PO-03: Çocuk İşçiliği ve Zorla Çalıştırmanın Önlenmesi Politikası
+Amaç: Küresel insan hakları standartlarına tam uyum sağlanması.
+Temel İlkeler: Holding bünyesinde ve tüm tedarik zincirinde çocuk işçi çalıştırılmasına asla izin verilmez. Tüm çalışma ilişkileri gönüllülük esasına dayanır; zorla veya borç karşılığı çalıştırma kesinlikle yasaktır.
+4. İK-PO-04: Sürdürülebilir İnsan Kaynakları Politikası
+Amaç: Çalışan bağlılığını artırmak ve geleceğin liderlerini holding içinden yetiştirmek.
+Temel İlkeler: Çalışanların gelişim yolculukları sürekli eğitimlerle desteklenir. Boşalan kritik pozisyonlarda öncelikli olarak şirket içi yetenek havuzundaki adaylar değerlendirilir.
+5. İK-PO-05: Çalışan Esenliği (Well-being) Politikası
+Amaç: Çalışanların fiziksel, zihinsel ve sosyal sağlıklarının bütünsel olarak korunması.
+Temel İlkeler: Çalışanların mesai saatleri dışındaki "bağlantıyı koparma" (right to disconnect) hakkına saygı duyulur. Acil durumlar hariç hafta sonu ve akşam saatlerinde iş iletişimi kurulmaması esastır.
+6. İK-PO-06: Ücretlendirme ve Yan Haklar Politikası
+Amaç: Sektörde rekabetçi, adil ve sürdürülebilir bir ödüllendirme yapısının kurulması.
+Temel İlkeler: Ücret artışlarında ve primlerde objektif performans çıktıları ile enflasyon/piyasa koşulları dengesi gözetilir. Eş değer işe eşit ücret ilkesi uygulanır.
+II. Bilgi Teknolojileri (BT) Politikaları
+7. BT-PO-01: Bilgi Güvenliği Politikası
+Amaç: Kurumsal verilerin gizliliğinin, bütünlüğünün ve erişilebilirliğinin garanti altına alınması.
+Temel İlkeler: Her çalışan, kullandığı cihazın ve eriştiği kurumsal verinin güvenliğinden sorumludur. Üçüncü partilerle veri paylaşımı ancak yasal onaylar ve gizlilik sözleşmeleri ile mümkündür.
+8. BT-PO-02: Bulut Bilişim Teknolojileri Politikası
+Amaç: Güvenli, ölçeklenebilir ve modern BT altyapılarının oluşturulması.
+Temel İlkeler: Yeni devreye alınacak tüm uygulamalarda "öncelikli bulut" (cloud-first) yaklaşımı benimsenir. Kişisel verilerin barındırıldığı sistemlerde yerel veri egemenliği mevzuatlarına (KVKK vb.) tam uyum aranır.
+9. BT-PO-03: Yapay Zeka ve Yeni Teknolojilerin Etik Kullanım Politikası
+Amaç: Yapay zeka uygulamalarının yasal, etik ve insan odaklı bir şekilde kullanılmasını sağlamak.
+Temel İlkeler: Yapay zeka sistemleri karar destek mekanizması olarak kullanılabilir ancak nihai sorumluluk insandadır. Üretken yapay zeka araçlarına müşteri veya şirket sırrı niteliğindeki gizli verilerin girilmesi yasaktır.
+10. BT-PO-04: Kendi Cihazını Getir (BYOD) Politikası
+Amaç: Kişisel cihazlarını iş amaçlı kullanmak isteyen çalışanlar için güvenlik standartlarının belirlenmesi.
+Temel İlkeler: Şirket ağına bağlanacak kişisel cihazlarda BT departmanı tarafından onaylanmış mobil cihaz yönetimi (MDM) yazılımının kurulması ve güvenlik sertifikalarının aktif olması zorunludur.
+11. BT-PO-05: Dijital Temizlik ve Veri İmha Politikası
+Amaç: Depolama maliyetlerini azaltmak ve veri güvenliği risklerini en aza indirmek.
+Temel İlkeler: Kullanım ömrünü tamamlamış, yasal saklama süresi dolmuş veya işlevsiz hale gelmiş veriler, geri döndürülemez şekilde güvenli imha yöntemleri ile silinir.
+12. BT-PO-06: Açık Kaynak Kodlu Yazılım Kullanım Politikası
+Amaç: Yazılım geliştirme süreçlerinde güvenlik zafiyetlerinin ve telif hakkı ihlallerinin önlenmesi.
+Temel İlkeler: Projelerde kullanılacak açık kaynak kütüphanelerin lisans türleri (MIT, Apache, GPL vb.) ve güvenlik açıkları BT Güvenlik Ekibi tarafından onaylanmadan canlı sistemlere entegre edilemez.
+III. Satın Alma ve Tedarik Zinciri (SA) Politikaları
+13. SA-PO-01: Sürdürülebilir ve Yeşil Satın Alma Politikası
+Amaç: Çevresel etkisi düşük, enerji verimli ve geri dönüştürülebilir ürünlerin tercih edilmesi.
+Temel İlkeler: Tedarikçi seçiminde karbon ayak izini azaltmayı hedefleyen, çevre sertifikalarına (ISO 14001 vb.) sahip firmalara öncelik verilir.
+14. SA-PO-02: Yerel Tedarikçi ve Bölgesel Kalkınma Politikası
+Amaç: Operasyon yürütülen bölgelerdeki yerel ekonomiye katkı sağlanması.
+Temel İlkeler: Kalite ve maliyet kriterlerinin eşitliği durumunda, operasyonun gerçekleştirildiği ülkede veya bölgede yerleşik olan yerel tedarikçiler öncelikli olarak tercih edilir.
+15. SA-PO-03: Tedarik Zinciri Etiği Politikası
+Amaç: Satın alma süreçlerinde şeffaflık, dürüstlük ve hesap verebilirliğin korunması.
+Temel İlkeler: Hiçbir satın alma çalışanı, tedarikçilerden kişisel çıkar, hediye veya ağırlama kabul edemez. Tüm satın alma ihaleleri şeffaf ve denetlenebilir şekilde yürütülür.
+IV. Finans ve Muhasebe (FN) Politikaları
+16. FN-PO-01: Finansal Şeffaflık ve Vergi Uyum Politikası
+Amaç: Finansal raporlamaların doğruluğunun ve uluslararası muhasebe standartlarına uyumun güvenceye alınması.
+Temel İlkeler: Tüm finansal işlemler gerçeğe uygun, zamanında ve eksiksiz kayıt altına alınır. Faaliyet gösterilen 17 ülkedeki vergi mevzuatlarına tam uyum esastır; agresif vergi kaçınma şemalarından uzak durulur.
+17. FN-PO-02: Finansal Risk Yönetimi ve Korunma (Hedging) Politikası
+Amaç: Kur dalgalanmaları, faiz oranları ve emtia fiyatlarındaki oynaklıklardan kaynaklanabilecek finansal risklerin minimize edilmesi.
+Temel İlkeler: Spekülatif amaçlı finansal işlemler yapılamaz. Döviz ve emtia risklerine karşı yalnızca onaylı türev araçları ile riskten korunma (hedging) işlemleri gerçekleştirilir.
+18. FN-PO-03: Kara Para Aklama ve Terörizmin Finansmanı ile Mücadele Politikası
+Amaç: Uluslararası finansal suçlarla mücadele standartlarına uyum sağlanması.
+Temel İlkeler: "Müşterini Tanı" (KYC) ve "Tedarikçini Tanı" prensipleri doğrultusunda, kaynağı belirsiz veya şüpheli görünen hiçbir fon kabul edilmez ve bu tür işlemler derhal uyum departmanına raporlanır.
+V. İş Sağlığı, Güvenliği ve Çevre (İSG-Ç) Politikaları
+19. İSG-PO-01: "Sıfır Kaza" ve Güvenli Çalışma Politikası
+Amaç: İş kazalarının ve meslek hastalıklarının tamamen önlenmesi.
+Temel İlkeler: "Hiçbir iş, güvenlik önlemleri alınmadan yapılacak kadar acil veya önemli değildir." Çalışanlar, güvensiz olduğunu tespit ettikleri işi durdurma hakkına (Stop Work Authority) sahiptir.
+20. İSG-PO-02: Çevre ve Biyoçeşitlilik Politikası
+Amaç: Doğal kaynakların korunması ve ekosistem üzerindeki olumsuz etkilerin en aza indirilmesi.
+Temel İlkeler: Enerji üretimi ve denizcilik faaliyetlerinde biyoçeşitliliğe zarar verilmemesi adına sismik ve çevresel etki değerlendirmeleri hassasiyetle uygulanır.
+21. İSG-PO-03: Atık Yönetimi ve Döngüsel Ekonomi Politikası
+Amaç: Kaynakların verimli kullanımı ve atık oluşumunun kaynağında azaltılması.
+Temel İlkeler: "Azalt, Yeniden Kullan, Geri Dönüştür" felsefesi benimsenir. Tehlikeli atıklar, çevreye zarar vermeyecek şekilde lisanslı kuruluşlar aracılığıyla bertaraf edilir.
+22. İSG-PO-04: Karbon Salınımı Azaltma Politikası
+Amaç: Küresel iklim değişikliği ile mücadeleye aktif katkıda bulunulması.
+Temel İlkeler: Holding, karbon emisyonlarını düzenli olarak ölçer ve azaltım hedefleri koyar. Yenilenebilir enerji yatırımlarının portföydeki payının artırılması ana stratejidir.
+VI. Operasyon, Enerji ve Denizcilik (OP) Politikaları
+23. OP-PO-01: Deniz Kirliliğinin Önlenmesi (MARPOL) Politikası
+Amaç: Karpowership (yüzer enerji gemileri) filosunun deniz ekosistemine zarar vermesini engellemek.
+Temel İlkeler: Uluslararası denizcilik kurallarına (MARPOL) tam uyum sağlanır. Gemilerden denize herhangi bir atık su, sintine veya katı atık bırakılması kesinlikle yasaktır.
+24. OP-PO-02: Hizmet Sürekliliği ve Enerji Arzı Politikası
+Amaç: Enerji sağlanan ülkelerdeki elektrik şebekelerinin kesintisiz beslenmesi.
+Temel İlkeler: Santrallerde ve güç gemilerinde yedekli sistemler (redundancy) hazır bulundurulur. Acil durum senaryoları çerçevesinde kesintisiz enerji arzı garanti edilir.
+25. OP-PO-03: Enerji Verimliliği Politikası
+Amaç: Üretim süreçlerinde kullanılan iç yakıt ve enerji tüketimini optimize etmek.
+Temel İlkeler: Güç gemilerinde ve idari binalarda en son teknoloji ürünü enerji tasarruflu cihazlar kullanılır. Operasyon ekipleri, enerji yoğunluğunu düşürmek için sürekli iyileştirme projeleri geliştirir.
+VII. Kurumsal İletişim (Kİ) Politikaları
+26. Kİ-PO-01: Kurumsal Sosyal Sorumluluk (KSS) Politikası
+Amaç: Faaliyet gösterilen yerel toplulukların sosyal, eğitimsel ve kültürel gelişimlerine katkıda bulunulması.
+Temel İlkeler: Enerji gemilerinin bulunduğu bölgelerde yerel halkın refahını artıracak eğitim projeleri, sağlık destekleri ve altyapı iyileştirmeleri holding tarafından desteklenir.
+27. Kİ-PO-02: Medya İlişkileri ve Kamuyu Aydınlatma Politikası
+Amaç: Holding itibarının korunması ve doğru bilgi akışının sağlanması.
+Temel İlkeler: Basına, sosyal medyaya veya yatırımcılara yapılacak tüm resmi açıklamalar yalnızca yetkilendirilmiş kurumsal sözcüler tarafından gerçekleştirilir. Çalışanlar bireysel olarak holding adına demeç veremez.
+VIII. Hukuk, Etik ve Uyum (HK) Politikaları
+28. HK-PO-01: Yolsuzluk ve Rüşvet Karşıtı Politika
+Amaç: Tüm iş süreçlerinin dürüstlük, ahlak ve yasalara uygun yürütülmesi.
+Temel İlkeler: Devlet görevlileri, müşteriler veya tedarikçilerle olan ilişkilerde rüşvet teklif edilmesi veya kabul edilmesi kesinlikle yasaktır. Yolsuzluk şüphesi barındıran durumlar vakit kaybetmeksizin Etik Hattı'na ihbar edilir.
+29. HK-PO-02: Kişisel Verilerin Korunması (GDPR/KVKK) Politikası
+Amaç: Bireylerin temel hak ve özgürlüklerinin, özellikle de özel hayatın gizliliğinin korunması.
+Temel İlkeler: Kişisel veriler açık rıza olmadan toplanamaz, işlenemez ve üçüncü taraflara aktarılamaz. Veriler yalnızca tanımlanan yasal amaçlar doğrultusunda ve belirlenen süre sınırları içinde saklanır.
+30. HK-PO-03: Adil Rekabet Kurallarına Uyum Politikası
+Amaç: Tekelleşmeyi önleyen ve serbest piyasa koşullarını koruyan rekabet yasalarına tam uyum gösterilmesi.
+Temel İlkeler: Rakiplerle fiyat tespiti, pazar paylaşımı veya ihale kurgulama gibi rekabeti kısıtlayıcı anlaşmalar yapılması kesinlikle yasaktır. Sektörel birlik toplantılarında hassas ticari bilgiler paylaşılamaz.
+Karadeniz Holding Kurumsal Talimatlar Veri Seti (Chatbot Bilgi Tabanı)
+Bu belge, "Senaryo 2: Kurumsal Bilgiye Erişim Problemi" kapsamında tasarlanacak yapay zeka chatbotu için çalışanların günlük operasyonlarında uygulayacakları adım adım teknik yönergeleri içeren 30 farklı iş talimatını kapsamaktadır.
+I. İnsan Kaynakları (İK) Talimatları
+1. İK-TA-01: İzin Talebi Oluşturma Talimatı
+Amaç: Çalışanların kurumsal İK portalı (MyKaradeniz HR) üzerinden yıllık veya mazeret izni talebi oluşturma adımlarının gösterilmesi.
+Adım Adım Uygulama:
+hr.karadenizholding.com adresine kurumsal e-posta ile giriş yapılır.
+Sol menüden "İzinlerim" sekmesine tıklanır.
+"Yeni İzin Talebi" butonu seçilir.
+İzin türü (Yıllık İzin, Doğum Günü İzni vb.) seçilir, başlangıç ve bitiş tarihleri girilir.
+Varsa yerine vekalet edecek personel seçilir ve "Onaya Gönder" butonuna tıklanır.
+2. İK-TA-02: Performans Hedefi Giriş Talimatı
+Amaç: Yıl başında belirlenen bireysel hedeflerin performans sistemine kaydedilmesi.
+Adım Adım Uygulama:
+Portal ana sayfasındaki "Performans Yönetimi" modülüne girilir.
+"Hedef Belirleme Dönemi" başlığı altındaki aktif forma tıklanır.
+"Hedef Ekle" butonuna basılarak hedef tanımı, ağırlığı ve KPI metrikleri yazılır.
+Toplam hedef ağırlığının \%100 olduğundan emin olunur.
+Sağ üst köşedeki "Yöneticinin Onayına Sun" butonuna basılarak işlem tamamlanır.
+3. İK-TA-03: Yeni Personel Kartı (Yaka Kartı) Talep Talimatı
+Amaç: Kartın kaybolması, hasar görmesi veya unvan değişikliği durumlarında yeni giriş kartı temini.
+Adım Adım Uygulama:
+İntranetteki "Destek Talepleri" kısmından "İdari İşler - Kart Talebi" formu açılır.
+Talep nedeni (Kayıp, Yıpranma, Terfi) belirtilir.
+Arka planı beyaz olan güncel biyometrik fotoğraf dosyası forma eklenir.
+Form onaylandıktan sonra 2 iş günü içinde yeni kart merkez ofis İdari İşler departmanından teslim alınır.
+4. İK-TA-04: Eğitim Değerlendirme Anketi Doldurma Talimatı
+Amaç: Katılım sağlanan dış veya iç eğitimlerin ardından geri bildirim sürecinin tamamlanması.
+Adım Adım Uygulama:
+Eğitim tamamlandıktan sonra e-postaya gelen anket linkine tıklanır.
+Eğitmen kalitesi, içerik yeterliliği ve organizasyon organizasyonu başlıklarındaki 5'li likert soruları yanıtlanır.
+Varsa gelişim önerileri metin kutusuna yazılır.
+"Gönder" butonuna tıklanarak İK Eğitim ve Gelişim birimine ulaştırılır.
+5. İK-TA-05: Esnek Yan Hak (Flexi-Benefit) Seçim Talimatı
+Amaç: Yıllık esnek yan hak bütçesinin çalışanlar tarafından özelleştirilmesi.
+Adım Adım Uygulama:
+Her yılın Kasım ayında aktif olan "Flexi-Choice" portalına giriş yapılır.
+Mevcut standart yan hak paketi (Sağlık sigortası limitleri, yemek çeki vb.) görüntülenir.
+Kullanılmayan haklar puana dönüştürülür.
+Biriken puanlar ile portal marketinden alışveriş çeki, özel check-up veya ek sigorta limitleri seçilerek "Sepeti Onayla" tuşuna basılır.
+II. Bilgi Teknolojileri (BT) Talimatları
+6. BT-TA-01: Kurumsal VPN (GlobalProtect) Bağlantı Talimatı
+Amaç: Ofis dışından kurumsal ağa ve ERP sistemine güvenli erişim sağlanması.
+Adım Adım Uygulama:
+Bilgisayarın sağ alt köşesindeki dünya ikonlu GlobalProtect uygulaması açılır.
+Portal adresi alanına vpn.karadenizholding.com yazılır ve "Connect" butonuna basılır.
+Açılan kurumsal oturum açma ekranında kullanıcı adı ve şifre girilir.
+Telefona gelen Microsoft Authenticator onay bildirimi kabul edilir. Status "Connected" olduğunda işlem tamamlanmıştır.
+7. BT-TA-02: Self-Service Parola Sıfırlama Talimatı
+Amaç: Unutulan veya süresi dolan kurumsal hesap şifrelerinin BT desteği olmadan sıfırlanması.
+Adım Adım Uygulama:
+İnternet tarayıcısından passwordreset.microsoftonline.com adresine gidilir.
+Kurumsal e-posta adresi ve ekrandaki güvenlik kodu yazılır.
+Doğrulama yöntemi olarak "Kayıtlı cep telefonuna SMS gönder" seçilir.
+Telefona gelen 6 haneli kod ekrana girilir.
+Belirlenen yeni şifre (en az 12 karakter, büyük/küçük harf, rakam ve sembol içeren) iki kez yazılarak onaylanır.
+8. BT-TA-03: Microsoft Authenticator (MFA) Kurulum Talimatı
+Amaç: Hesap güvenliğini artırmak için iki adımlı doğrulama sisteminin telefona kurulması.
+Adım Adım Uygulama:
+Mobil cihazın uygulama mağazasından (App Store / Google Play) "Microsoft Authenticator" indirilir.
+Bilgisayardan aka.ms/mfasetup adresine gidilerek oturum açılır.
+Bilgisayar ekranında beliren QR kod, telefondaki uygulamadan "Hesap Ekle -> İş veya Okul Hesabı -> QR Kodunu Tara" seçilerek okutulur.
+Ekranda beliren iki haneli sayı telefona girilerek eşleştirme tamamlanır.
+9. BT-TA-04: Şüpheli E-Posta (Phishing) Bildirme Talimatı
+Amaç: Olası oltalama saldırılarının BT Güvenlik ekibine tek tıkla raporlanması.
+Adım Adım Uygulama:
+Outlook üzerinde şüpheli olduğu düşünülen e-posta açılır.
+Outlook üst menüsünde (şeritte) bulunan kırmızı renkli balık kılçığı simgeli "Report Phishing" butonuna tıklanır.
+Sağda açılan panelde "Bu e-postayı bildir" seçeneği onaylanır.
+E-posta otomatik olarak gelen kutusundan silinir ve analiz için BT Güvenlik havuzuna yönlendirilir.
+10. BT-TA-05: Ortak Yazıcı Tanımlama ve Çıktı Alma Talimatı
+Amaç: Ofislerdeki güvenli ortak yazıcılara bilgisayar üzerinden erişim sağlanması.
+Adım Adım Uygulama:
+Bilgisayardan Başlat menüsüne girilerek \\kh-print01 yazılır ve Enter'a basılır.
+Açılan listeden bulunulan katın yazıcısı (Örn: Kat3_FollowMe) çift tıklanarak yüklenir.
+Doküman yazdırılırken hedef yazıcı olarak bu yazıcı seçilir.
+Herhangi bir ortak yazıcının başına gidilerek personel kartı okutulur ve ekrandaki "Yazdır" butonuna basılarak çıktı fiziksel olarak alınır.
+11. BT-TA-06: Teams Toplantı Odası (MTR) Kullanım Talimatı
+Amaç: Toplantı salonlarındaki akıllı Teams sistemlerinin aktif edilmesi.
+Adım Adım Uygulama:
+Toplantı daveti oluştururken oda kaynak adı (Örn: Toplantı Odası - Karadeniz) katılımcı olarak eklenir.
+Salondaki dokunmatik ekranda ilgili toplantının başlığı görüldüğünde "Join" (Katıl) butonuna basılır.
+Bilgisayardan sunum paylaşmak için HDMI kablosu takılır veya Teams uygulamasından "Cast" (Yansıt) özelliği seçilir.
+Toplantı bitiminde dokunmatik ekrandan kırmızı renkli "Leave" (Ayrıl) butonuna basılır.
+III. Satın Alma ve Tedarik Zinciri (SA) Talimatları
+12. SA-TA-01: ERP Üzerinde Satın Alma Talebi (PR) Oluşturma Talimatı
+Amaç: Departmanların ihtiyaç duyduğu mal veya hizmetler için ERP sisteminde onay mekanizmasının başlatılması.
+Adım Adım Uygulama:
+ERP sistemine giriş yapılarak "Satın Alma Yönetimi -> İşlemler -> Satın Alma Talebi" yolu izlenir.
+"Yeni Ekle" butonuna basılarak talep eden departman ve masraf merkezi seçilir.
+Kalem bilgileri kısmından ürün/hizmet kodu seçilir, miktar ve tahmini birim fiyat girilir.
+Varsa teknik şartname veya teklif belgeleri ekler kısmına yüklenir.
+"Onay Akışını Başlat" butonuna tıklanarak talep yöneticinin onayına gönderilir.
+13. SA-TA-02: Yeni Tedarikçi Tanımlama Talimatı
+Amaç: ERP sisteminde kayıtlı olmayan yeni bir tedarikçinin sisteme entegre edilmesi süreci.
+Adım Adım Uygulama:
+Tedarikçiden alınan güncel vergi levhası, imza sirküleri, ticaret sicil gazetesi ve banka hesap teyit yazısı (dekont veya resmi mektup) temin edilir.
+İntranetteki "Yeni Tedarikçi Kartı Talep Formu" doldurulur.
+Tedarikçinin IBAN bilgileri sisteme hatasız olarak girilir ve temin edilen belgeler forma eklenir.
+Satın alma yöneticisi ve Finans onayının ardından tedarikçiye sistem tarafından otomatik bir V-ID (Vendor ID) atanır.
+14. SA-TA-03: Teklif Karşılaştırma Matrisi (TCO) Hazırlama Talimatı
+Amaç: Alınan alternatif tekliflerin finansal ve teknik olarak standart formata getirilmesi.
+Adım Adım Uygulama:
+Ortak alandaki güncel SA-FR-12_TCO_Template.xlsx dosyası indirilir.
+Alınan en az 3 teklife ait fiyat, teslim süresi, garanti koşulları ve ödeme vadeleri ilgili sütunlara işlenir.
+Döviz cinsinden olan teklifler Merkez Bankası güncel kuruyla ana para birimine (USD veya EUR) çevrilir.
+Toplam sahip olma maliyeti (TCO) formüller yardımıyla hesaplanarak önerilen tedarikçi satırı yeşil renkle işaretlenir.
+IV. Finans ve Muhasebe (FN) Talimatları
+15. FN-TA-01: Masraf Bildirim Formu (Expense Claim) Hazırlama Talimatı
+Amaç: İş seyahati veya temsil harcamalarının geri ödenmesi için fatura ve fişlerin sisteme girilmesi.
+Adım Adım Uygulama:
+Finans portalındaki "Masraflarım" modülüne girilir.
+Fiş veya faturaların fotoğrafları çekilerek sisteme yüklenir (OCR sistemi tutar ve KDV'yi otomatik okur).
+Masraf türü (Yemek, Taksi, Konaklama vb.) seçilir ve ilgili proje veya masraf merkeziyle ilişkilendirilir.
+Harcama tutarları ve KDV oranları kontrol edilerek doğrulanır.
+"Raporu Kaydet ve Gönder" denilerek onay süreci başlatılır. Fiziksel fişler ay sonunda Muhasebe departmanına teslim edilir.
+16. FN-TA-02: Avans Talep ve Kapama Talimatı
+Amaç: İş seyahatleri öncesi talep edilen nakit avansın alınması ve seyahat dönüşü kapatılması adımları.
+Adım Adım Uygulama:
+Seyahatten en az 3 iş günü önce "Nakit Avans Talep Formu" ERP üzerinden doldurulur.
+Talep edilen tutar, seyahat amacı ve tarih aralığı yazılır.
+Seyahat dönüşünde en geç 5 iş günü içinde, harcanan miktarlar "Masraf Bildirim Formu" ile sisteme girilir ve avans numarasıyla eşleştirilir.
+Kalan nakit tutar, formda belirtilen şirket IBAN hesabına açıklama kısmına avans kodu yazılarak iade edilir.
+17. FN-TA-03: Tedarikçi Faturası Onaylama Talimatı
+Amaç: Gelen tedarikçi e-faturalarının bütçe ve satın alma siparişi ile eşleştirilerek onaylanması.
+Adım Adım Uygulama:
+Muhasebe onay ekranına düşen fatura açılır.
+Fatura üzerindeki tutar ile ERP'deki Satın Alma Siparişi (PO) tutarı karşılaştırılır (Maksimum \%2 sapma kabul edilir).
+Hizmet veya malın teslim alındığına dair "Ambar Giriş Fişi" veya "Hizmet Kabul Formu" doğrulanır.
+Herhangi bir uyumsuzluk yoksa "Kabul Et" butonuna basılarak fatura ödeme listesine alınır.
+V. İş Sağlığı, Güvenliği ve Çevre (İSG-Ç) Talimatları
+18. İSG-TA-01: Ramak Kala Olay Bildirim Talimatı
+Amaç: Kazaya yol açabilecek tehlikeli durumların anında raporlanması ve önlem alınması.
+Adım Adım Uygulama:
+İntranette veya mobil uygulamadaki "Ramak Kala Bildir" butonuna tıklanır.
+Olayın gerçekleştiği lokasyon, tarih ve saat seçilir.
+Durumun kısa bir özeti yazılır (Örn: "Koridordaki kablo açıkta duruyor, takılma riski var").
+Varsa tehlikeli alanın fotoğrafı eklenir.
+Bildirim gönderildiğinde sistem otomatik olarak ilgili İSG Uzmanına SMS ve e-posta ile uyarı iletir.
+19. İSG-TA-02: Deprem Anında Güvenli Davranış Talimatı
+Amaç: Deprem sarsıntısı başladığında yapılması gereken hayat kurtarıcı adımlar.
+Adım Adım Uygulama:
+Panik yapılmaz, pencerelerden ve cam bölmelerden uzaklaşılır.
+Sağlam bir masa veya dolap yanına geçilerek ÇÖK-KAPAN-TUTUN pozisyonu alınır.
+Sarsıntı bitene kadar yer değiştirilmez, asansörler kesinlikle kullanılmaz.
+Sarsıntı durduğunda önceden belirlenmiş tahliye güzergahları izlenerek bina terk edilir.
+Lokasyonun dışındaki Acil Durum Toplanma Alanı'na gidilerek yoklama için beklenir.
+20. İSG-TA-03: Yangın Söndürme Tüpü (Kuru Kimyevi Toz) Kullanım Talimatı
+Amaç: Küçük çaplı yangın başlangıçlarına doğru şekilde müdahale edilmesi.
+Adım Adım Uygulama:
+Yangın söndürme cihazının üzerindeki basınç göstergesi kontrol edilir (İbre yeşil alanda olmalıdır).
+Cihazın üzerindeki metal emniyet pimi çekilir.
+Hortum ucu yangının kaynağına (alevlerin üstüne değil, dibine) yönlendirilir.
+Cihazın tetiğine basılarak toz, rüzgar arkaya alınacak şekilde SÜPÜRME hareketiyle yangın noktasına sıkılır.
+21. İSG-TA-04: Ofis Ergonomisi Düzenleme Talimatı
+Amaç: Ekranlı araçlarla çalışırken kas-iskelet sistemi rahatsızlıklarının önlenmesi.
+Adım Adım Uygulama:
+Koltuk yüksekliği, ayaklar yere tam basacak ve dizler 90 derece açı yapacak şekilde ayarlanır.
+Monitörün üst sınırı göz hizasında olmalı ve ekranla göz arasında en az 50-70 cm mesafe bulunmalıdır.
+Klavye ve fare kullanırken bileklerin bükülmemesi için ergonomik destek pedleri konumlandırılır.
+Her 50 dakikalık çalışma sonrasında 10 dakika gözleri dinlendirme ve hafif esneme egzersizleri uygulanır.
+VI. Operasyon ve Denizcilik (OP) Talimatları
+22. OP-TA-01: Güç Gemilerinde Acil Durum Jeneratörü Çalıştırma Talimatı
+Amaç: Powership gemilerinde ana jeneratörlerin devre dışı kalması durumunda acil durum sisteminin aktif edilmesi.
+Adım Adım Uygulama:
+Acil durum jeneratör odasına gidilerek kontrol paneline erişilir.
+Yakıt vanalarının açık ve yakıt seviyesinin en az \%75 olduğu kontrol edilir.
+Akü voltaj değerlerinin normal sınırlar içinde olduğu doğrulanır.
+Seçici anahtar "MANUAL" konumuna getirilir ve "START" butonuna basılarak jeneratör devreye alınır.
+Çıkış voltaj ve frekans değerleri kontrol panelinden doğrulanarak ana bara bağlantısı (Breaker Close) gerçekleştirilir.
+23. OP-TA-02: Sintine Seviyesi Ölçüm ve Kayıt Talimatı
+Amaç: Deniz kirliliğini önlemek adına gemi sintine tankı seviyelerinin günlük takibi.
+Adım Adım Uygulama:
+Makine dairesindeki sintine kuyularına gidilir.
+Kalibre edilmiş iskandil cetveli yavaşça kuyu tabanına kadar indirilir.
+Cetvel çekilerek yağ/su seviyesi milimetrik olarak okunur.
+Okunan değer tank kalibrasyon tablosuna göre metreküpe (m^3) çevrilir.
+Elde edilen değer resmi **"Yağ Kayıt Defteri"**ne (Oil Record Book) mavi tükenmez kalemle işlenerek başmühendis tarafından imzalanır.
+24. OP-TA-03: Yakıt Transferi (Bunkering) Emniyet Talimatı
+Amaç: Gemiye yakıt ikmali yapılırken oluşabilecek sızıntı ve kaza risklerinin sıfırlanması.
+Adım Adım Uygulama:
+Transfer öncesi tüm güverte firarları (scupper'lar) ahşap tapalar ve çimento ile sızdırmaz hale getirilir.
+Yakıt hortumu bağlantı flanşlarının altına toplama tavaları yerleştirilir.
+Gemi ile ikmal barjı arasında ortak haberleşme kanalı (UHF Telsiz) test edilir.
+Acil durdurma (Emergency Stop) butonlarının çalışırlığı kontrol edilir.
+Transfer sırasında her iki saatte bir hortum sızdırmazlığı ve tank seviyeleri gözle kontrol edilir.
+25. OP-TA-04: Depo Stok Kabul ve Barkod Okutma Talimatı
+Amaç: Depoya gelen yeni yedek parçaların sisteme hatasız girişinin yapılması.
+Adım Adım Uygulama:
+Gelen malzemeler irsaliye ile fiziksel olarak karşılaştırılır (Hasar kontrolü yapılır).
+El terminali açılarak kurumsal depo uygulamasına giriş yapılır.
+Malzemenin üzerindeki orijinal parça barkodu veya holding tarafından üretilen QR kod el terminali ile okutulur.
+Miktar bilgisi girilerek "Kabul Et" tuşuna basılır.
+Sistem tarafından önerilen raf adresine (Örn: A-12-C) malzeme fiziksel olarak yerleştirilir ve lokasyon barkodu okutularak işlem tamamlanır.
+VII. Kurumsal İletişim (Kİ) Talimatları
+26. Kİ-TA-01: Kurumsal Outlook İmzası Oluşturma Talimatı
+Amaç: E-posta iletişiminde kurumsal kimlik standartlarının birebir uygulanması.
+Adım Adım Uygulama:
+İntranetteki "Kurumsal Kimlik -> İmza Oluşturucu" sayfasına girilir.
+İsim, unvan, departman ve telefon bilgileri ilgili alanlara yazılır.
+Sistem tarafından otomatik üretilen HTML formatındaki imza bloku kopyalanır.
+Outlook uygulamasında "Dosya -> Seçenekler -> Posta -> İmzalar" menüsüne gidilir.
+Yeni bir imza oluşturulup kopyalanan şablon buraya yapıştırılır ve varsayılan imza olarak kaydedilir.
+27. Kİ-TA-02: Kurumsal Sunum Şablonu Uygulama Talimatı
+Amaç: Hazırlanan Powerpoint sunumlarının holding renk ve yazı tipi standartlarına uyumlu hale getirilmesi.
+Adım Adım Uygulama:
+Ortak ağdan en güncel Karadeniz_Holding_2026_Template.potx dosyası bilgisayara indirilir.
+PowerPoint açılıp bu şablon "Tasarım" sekmesinden varsayılan tema olarak seçilir.
+Başlıklar için mutlaka Segoe UI (Bold), gövde metinleri için ise Segoe UI (Regular) yazı tipi kullanılır.
+Slaytlardaki ana vurgu rengi olarak holding laciverti (RGB: 12, 35, 64) ve turkuazı (RGB: 0, 168, 181) dışında renk kullanılmaz.
+VIII. Hukuk, Etik ve Uyum (HK) Talimatları
+28. HK-TA-01: Gizlilik Sözleşmesi (NDA) Talep Talimatı
+Amaç: Üçüncü partilerle bilgi paylaşımı öncesi standart gizlilik sözleşmesinin hazırlanması.
+Adım Adım Uygulama:
+Hukuk departmanı talep portalına girilerek "Yeni Sözleşme Talebi" açılır.
+Karşı tarafın resmi unvanı, vergi dairesi ve numarası alanları doldurulur.
+Paylaşılacak bilginin kapsamı (Finansal, Teknik, Ticari) seçilir.
+Tek taraflı (Mutual) mı yoksa karşılıklı gizlilik sözleşmesi mi istendiği belirtilir.
+Sistem tarafından otomatik üretilen standart şablon karşı tarafa gönderilmeden önce hukuk onayına sunulur.
+29. HK-TA-02: Etik Bildirim Hattı Kullanım Talimatı
+Amaç: Etik ihlallerin, suiistimallerin veya usulsüzlüklerin güvenli ve gizli şekilde bildirilmesi.
+Adım Adım Uygulama:
+etik.karadenizholding.com adresindeki bağımsız portal ziyaret edilir veya 0850 XXX XX XX numaralı Etik Hattı aranır.
+"Bildirimde Bulun" seçeneği tıklanır.
+Kimlik bilgileri gizli tutulmak isteniyorsa "Anonim Bildirim" seçeneği işaretlenir (Bu durumda isminiz hiçbir birimle paylaşılmaz).
+İhlalin türü, tarihi, dahil olan kişiler ve durumun detaylı açıklaması yazılır, varsa kanıt belgeleri sisteme eklenir.
+Sistem tarafından verilen 16 haneli "Takip Kodu" kaydedilir. Bu kod ile bildirimin durumu sonradan sorgulanabilir.
+30. HK-TA-03: Müşteri/Tedarikçi KVKK Onay Formu Gönderme Talimatı
+Amaç: Kişisel verilerin işlenmesi öncesinde gerekli aydınlatma ve rıza alma adımlarının yürütülmesi.
+Adım Adım Uygulama:
+Müşteri veya tedarikçiyle ilk iletişim kurulduğunda Hukuk arşivindeki güncel HK-FR-45_KVKK_Aydinlatma_Metni.pdf dosyası e-postaya eklenir.
+E-posta şablonundaki standart KVKK bilgilendirme metni kullanılır.
+Eğer karşı taraftan özel nitelikli veri (Sağlık bilgisi, biyometrik veri vb.) alınacaksa, HK-FR-46_Acik_Riza_Beyani.pdf formu gönderilerek ıslak imzalı veya güvenli elektronik imzalı olarak geri alınması sağlanır.
+İmzalı gelen rıza formları taranarak ERP'deki müşteri/tedarikçi kartı altına eklenir.
+Karadeniz Holding Kurumsal Formlar Veri Seti (Chatbot Bilgi Tabanı)
+Bu belge, "Senaryo 2: Kurumsal Bilgiye Erişim Problemi" kapsamında tasarlanacak yapay zeka chatbotu için çalışanların süreçlerde kullanacağı ve dolduracağı standart şablonları içeren 30 farklı kurumsal formu kapsamaktadır.
+I. İnsan Kaynakları (İK) Formları
+1. İK-FR-01: İşe Alım Talep Formu
+Kullanım Amacı: Departmanların yeni norm kadro veya ayrılan personel yerine yeni çalışan istihdamı için onay başlatması.
+Gerekli Temel Alanlar: Talep Eden Departman, Pozisyon Adı, Talep Nedeni (Kadro Genişlemesi/Ayrılan Personel), Aranan Minimum Deneyim (Yıl), Bütçe Durumu, Talep Eden Yönetici İmzası.
+İlişkili Prosedür: İK-PR-01 (İşe Alım ve Oryantasyon Prosedürü)
+2. İK-FR-02: Yeni Çalışan Bilgi Formu
+Kullanım Amacı: İşe alım onayı verilen adayın özlük bilgilerinin ve acil durum iletişim detaylarının sisteme kaydedilmesi.
+Gerekli Temel Alanlar: Adı-Soyadı, T.C. Kimlik No / Pasaport No, Doğum Tarihi, İletişim Bilgileri, Eğitim Durumu, Acil Durumda Aranacak Kişi (Ad, Telefon, Yakınlık Derecesi), Banka IBAN Bilgisi.
+İlişkili Prosedür: İK-PR-01 (İşe Alım ve Oryantasyon Prosedürü)
+3. İK-FR-03: Fazla Mesai Onay Formu
+Kullanım Amacı: Yasal sınırlar dahilinde gerçekleştirilecek fazla çalışma saatlerinin önceden yönetici onayına sunulması.
+Gerekli Temel Alanlar: Çalışan Sicil No, Adı-Soyadı, Departmanı, Fazla Mesai Yapılacak Tarih ve Saat Aralığı, Fazla Mesai Gerekçesi, Yönetici Onay İmzası.
+İlişkili Prosedür: İK-PR-04 (Yıllık Ücretli İzin ve Mazeret İzni Prosedürü)
+4. İK-FR-04: Yıllık İzin Talep Formu
+Kullanım Amacı: Çalışanların hak ettikleri yıllık ücretli veya mazeret izinlerini kullanmak için doldurduğu resmi form.
+Gerekli Temel Alanlar: Sicil No, Adı-Soyadı, İzin Türü (Yıllık, Mazeret, Sağlık vb.), İzin Başlangıç ve Bitiş Tarihi, Toplam İş Günü, İzin Dönemindeki İletişim Adresi/Telefonu, Vekalet Edecek Personel, Yönetici Onayı.
+İlişkili Talimat: İK-TA-01 (İzin Talebi Oluşturma Talimatı)
+5. İK-FR-05: Eğitim Katılım ve Değerlendirme Formu
+Kullanım Amacı: Alınan eğitimlerin kalitesinin ölçülmesi ve İK eğitim bütçesi etkinliğinin analiz edilmesi.
+Gerekli Temel Alanlar: Katılımcı Bilgileri, Eğitim Adı, Eğitim Firması/Eğitmen, Eğitim Tarihi, İçerik Değerlendirme Soruları (1-5 Puan), Eğitmen Değerlendirme Soruları, Eğitimin Çalışana Katkısı (Metin).
+İlişkili Talimat: İK-TA-04 (Eğitim Değerlendirme Anketi Doldurma Talimatı)
+6. İK-FR-06: Zimmet ve Teslim Tesellüm Formu
+Kullanım Amacı: Çalışana işe başlarken veya süreç içinde teslim edilen holding varlıklarının (bilgisayar, telefon, araç vb.) resmi kaydı.
+Gerekli Temel Alanlar: Teslim Alan Personel Sicil No/Adı, Teslim Eden Departman, Malzemenin Türü, Marka/Model, Seri Numarası, Malzemenin Mevcut Fiziki Durumu, Teslim Tarihi, Karşılıklı İmzalar.
+İlişkili Prosedür: BT-PR-03 (BT Varlık Yönetimi ve Zimmet Prosedürü)
+7. İK-FR-07: İşten Ayrılış İlişik Kesme Formu
+Kullanım Amacı: İşten ayrılan personelin holding üzerindeki tüm sorumluluk, yetki ve zimmetlerinin sıfırlandığının departmanlarca onaylanması.
+Gerekli Temel Alanlar: Personel Bilgileri, Ayrılış Tarihi, İdari İşler Onayı (Kart, anahtar teslimi), BT Departmanı Onayı (PC, Telefon, E-posta kapatılması), Finans/Muhasebe Onayı (Borç/Alacak durumu), İK Onayı ve İmza.
+İlişkili Prosedür: İK-PR-05 (İşten Ayrılış ve İlişik Kesme Prosedürü)
+II. Bilgi Teknolojileri (BT) Formları
+8. BT-FR-01: Yeni Kullanıcı Tanımlama ve Yetkilendirme Formu
+Kullanım Amacı: Yeni başlayan veya rolü değişen çalışanın kurumsal sistemlerdeki (ERP, E-posta, Dosya Sunucuları) erişim yetkilerinin belirlenmesi.
+Gerekli Temel Alanlar: Çalışan Adı-Soyadı, Departman/Unvan, Talep Edilen Yetki Grupları (Okuma, Yazma, Tam Yetki), Erişim Gereken Uygulamalar (SAP, Salesforce vb.), Departman Yöneticisi Onayı.
+İlişkili Prosedür: BT-PR-04 (Erişim Yetkilendirme ve Şifre Güvenliği Prosedürü)
+9. BT-FR-02: BT Donanım Talep Formu
+Kullanım Amacı: Arıza, yıpranma veya iş gereksinimleri nedeniyle yeni ek donanım (ekran, klavye, yazıcı, RAM yükseltme vb.) talep edilmesi.
+Gerekli Temel Alanlar: Kullanıcı Bilgileri, Mevcut Donanım Özellikleri, Talep Edilen Donanım/Yükseltme, Talep Gerekçesi, BT Teknik Değerlendirme Notu, Yönetici Onayı.
+İlişkili Prosedür: BT-PR-03 (BT Varlık Yönetimi ve Zimmet Prosedürü)
+10. BT-FR-03: Şirket Dışı Veri Paylaşım Onay Formu
+Kullanım Amacı: Proje ortakları veya üçüncü parti danışmanlar ile şirket dışına hassas/büyük veri aktarımı öncesinde izin alınması.
+Gerekli Temel Alanlar: Paylaşımı Yapan Departman, Alıcı Kurum/Kişi, Verinin Sınıfı (Gizli, Çok Gizli), Veri Aktarım Yöntemi (SFTP, Şifreli Bulut vb.), Paylaşım Gerekçesi, Hukuk ve BT Güvenlik Onayları.
+İlişkili Politika: BT-PO-01 (Bilgi Güvenliği Politikası)
+11. BT-FR-04: Dış Kaynak / Yüklenici Erişim Talep Formu
+Kullanım Amacı: Şirket dışından destek veren danışman, denetçi veya yüklenici personelin geçici süreyle kurumsal ağa/sistemlere erişim izni alması.
+Gerekli Temel Alanlar: Dış Kaynak Adı-Soyadı, Bağlı Olduğu Firma, Erişim Sebebi/Proje Adı, Erişim Başlangıç ve Bitiş Tarihi, İzin Verilen IP Adresleri/Sistemler, Sponsor Şirket Yöneticisi Onayı.
+İlişkili Prosedür: BT-PR-04 (Erişim Yetkilendirme ve Şifre Güvenliği Prosedürü)
+12. BT-FR-05: Bilgi Güvenliği İhlal Bildirim Formu
+Kullanım Amacı: Şüpheli siber olayların, veri sızıntılarının veya cihaz kayıplarının BT Güvenlik ekibine raporlanması.
+Gerekli Temel Alanlar: Olayı Tespit Eden Kişi, Olayın Gerçekleştiği/Tespit Edildiği Tarih, Olayın Türü (Phishing, Zararlı Yazılım, Kayıp Cihaz vb.), Etkilenen Sistemler/Veriler, İlk Müdahale Detayları.
+İlişkili Prosedür: BT-PR-05 (Siber Olay Müdahale Prosedürü)
+13. BT-FR-06: Veri Kurtarma ve Geri Dönüş Talep Formu
+Kullanım Amacı: Yanlışlıkla silinen veya bozulan kritik veritabanı/dosya yedeklerinin geri yüklenmesi için BT sistem ekibine yapılan talep.
+Gerekli Temel Alanlar: Talep Sahibi, Verinin Bulunduğu Sunucu/Sistem, Silinen Dosya Yolu/Veritabanı Tablosu, Verinin En Son Sorunsuz Çalıştığı Tahmini Tarih/Saat, İş Kaybı Etki Analizi.
+İlişkili Prosedür: BT-PR-02 (Veri Yedekleme ve Kurtarma Prosedürü)
+III. Satın Alma ve Tedarik Zinciri (SA) Formları
+14. SA-FR-01: Satın Alma Talep Formu (Purchase Request)
+Kullanım Amacı: İş birimlerinin mal veya hizmet tedariki başlatmak için teknik özellikleri belirterek doldurduğu form.
+Gerekli Temel Alanlar: Talep Eden Birim, Bütçe Kalemi/Masraf Merkezi, Malzeme/Hizmet Açıklaması, İstenen Miktar, Tahmini Teslim Tarihi, Varsa Önerilen Tedarikçiler, Teknik Şartname Eki Var/Yok Kutusu.
+İlişkili Talimat: SA-TA-01 (ERP Üzerinde Satın Alma Talebi Oluşturma Talimatı)
+15. SA-FR-02: Tedarikçi Değerlendirme ve Kayıt Formu
+Kullanım Amacı: Yeni çalışılacak tedarikçi adaylarının holding standartlarına (mali, teknik, etik) uygunluğunun denetlenmesi ve sisteme eklenmesi.
+Gerekli Temel Alanlar: Firma Resmi Unvanı, Vergi Kimlik Bilgileri, Faaliyet Konusu, Referans Şirketler, Kalite Belgeleri (ISO 9001, 14001 vb.), Banka Detayları ve IBAN, Ticari Sicil Gazetesi Eki.
+İlişkili Talimat: SA-TA-02 (Yeni Tedarikçi Tanımlama Talimatı)
+16. SA-FR-03: Teklif İsteme Formu (Request for Quotation)
+Kullanım Amacı: Satın alma departmanı tarafından onaylı tedarikçilere gönderilen standart fiyat ve teslim koşulu sorgulama şablonu.
+Gerekli Temel Alanlar: Satın Alma Kodu, Malzeme Detayları/Şartname, Talep Edilen Miktar, Teslim Yeri (Incoterms), Son Teklif Verme Tarihi, Ödeme Koşulları Talebi, Teklif Formu Teslim Formatı.
+İlişkili Prosedür: SA-PR-02 (Mal ve Hizmet Alımı Prosedürü)
+17. SA-FR-04: İhale Karar ve Karşılaştırma Formu
+Kullanım Amacı: Alternatif tekliflerin toplanmasının ardından nihai karar merciine sunulmak üzere hazırlanan onay formu.
+Gerekli Temel Alanlar: İhale Konusu, Alınan Tekliflerin Listesi (Tedarikçi Adı, Birim Fiyat, Toplam Tutar, Ödeme Vadesi, Teslim Süresi), Seçilen Tedarikçi ve Seçilme Gerekçesi, Satın Alma Komitesi İmzaları.
+İlişkili Talimat: SA-TA-03 (Teklif Karşılaştırma Matrisi Hazırlama Talimatı)
+18. SA-FR-05: Sözleşme İnceleme ve Onay Formu
+Kullanım Amacı: Tedarikçiler veya müşterilerle imzalanacak sözleşmelerin imza öncesinde ilgili departmanlarca (Satın Alma, Hukuk, Finans) incelenmesi.
+Gerekli Temel Alanlar: Sözleşme Tarafları, Sözleşme Konusu ve Tutarı, Başlangıç/Bitiş Tarihi, Hukuki İnceleme Notları, Finansal Risk Notları, Sözleşme Sahibi Yönetici İmzası.
+İlişkili Prosedür: SA-PR-03 (Sözleşme Yönetimi Prosedürü)
+IV. Finans ve Muhasebe (FN) Formları
+19. FN-FR-01: Masraf Beyan Formu (Expense Report)
+Kullanım Amacı: Çalışanların iş seyahatlerinde veya müşteri temsil süreçlerinde yaptığı harcamaları beyan ederek geri ödeme aldığı form.
+Gerekli Temel Alanlar: Çalışan Sicil No/Adı, Masraf Dönemi, Harcama Detayları Tablosu (Tarih, Fatura/Fiş No, Firma Adı, Açıklama, Tutar, KDV Oranı), Toplam Harcama, Masraf Merkezi, Onaylayan Yönetici İmzası.
+İlişkili Talimat: FN-TA-01 (Masraf Bildirim Formu Hazırlama Talimatı)
+20. FN-FR-02: Nakit Avans Talep Formu
+Kullanım Amacı: İş seyahati, saha operasyonu veya acil alımlar öncesinde çalışana nakit veya banka yoluyla ön ödeme yapılması için kullanılan form.
+Gerekli Temel Alanlar: Talep Eden, Talep Edilen Avans Tutarı (Döviz Cinsi dahil), Avansın Kullanılacağı Yer/Proje, Seyahat Tarihleri, Tahmini Kapama Tarihi, Finans Onayı.
+İlişkili Talimat: FN-TA-02 (Avans Talep ve Kapama Talimatı)
+21. FN-FR-03: Bütçe Revizyon Talep Formu
+Kullanım Amacı: Departmanların yıl başında onaylanan bütçe kalemleri arasında aktarım yapması veya ek bütçe talep etmesi.
+Gerekli Temel Alanlar: Talep Eden Departman, Revizyon Türü (Kalemler Arası Aktarım / Ek Ödenek), Azaltılacak Bütçe Kalem Kodu, Artırılacak Bütçe Kalem Kodu, Revizyon Tutarı, Revizyon Gerekçesi, Finans Direktörü Onayı.
+İlişkili Prosedür: FN-PR-02 (Bütçe Hazırlama ve Revizyon Prosedürü)
+22. FN-FR-04: Ödeme Talimatı Formu
+Kullanım Amacı: Plan dışı, acil veya banka entegrasyonu dışındaki özel ödemelerin yapılması için hazine departmanına gönderilen resmi talimat.
+Gerekli Temel Alanlar: Ödeme Yapılacak Alıcı Unvanı, Alıcı Banka ve IBAN Bilgisi, Ödeme Tutarı ve Para Birimi, Ödeme Açıklaması (Fatura referansı vb.), Ödeme Tarihi, Yetkili İmza Sirkülerine Göre Çift İmza.
+İlişkili Prosedür: FN-PR-03 (Nakit Yönetimi ve Ödemeler Prosedürü)
+V. İş Sağlığı, Güvenliği ve Çevre (İSG-Ç) Formları
+23. İSG-FR-01: Ramak Kala Olay Bildirim Formu
+Kullanım Amacı: Yaralanmaya veya hasara yol açmayan ancak potansiyel tehlike barındıran olayların İSG uzmanlarına iletilmesi.
+Gerekli Temel Alanlar: Olayın Yeri ve Zamanı, Olayın Kısa Tanımı, Tehlike Sınıfı Tahmini (Düşük/Orta/Yüksek), Olay Anında Orada Bulunan Kişiler, Alınması Önerilen Düzeltici Önlem, Bildirimi Yapan (İsteğe Bağlı).
+İlişkili Talimat: İSG-TA-01 (Ramak Kala Olay Bildirim Talimatı)
+24. İSG-FR-02: İş Kazası Tespit ve Raporlama Formu
+Kullanım Amacı: Şirket sınırlarında meydana gelen her türlü iş kazasının kök neden analizi yapılarak yasal kurumlara bildirilmesi amacıyla doldurulan form.
+Gerekli Temel Alanlar: Kazazede Bilgileri (Ad, Sicil, Görev), Kazanın Tarihi ve Saati, Kazanın Oluş Şekli (Detaylı), Kaza Sonucu Oluşan Yaralanma/Hasar Türü, Görgü Tanıkları, İSG Uzmanı ve İşyeri Hekimi Görüşü.
+İlişkili Prosedür: İSG-PR-03 (İş Kazası Bildirim ve Araştırma Prosedürü)
+25. İSG-FR-03: Kişisel Koruyucu Donanım (KKD) Teslim Formu
+Kullanım Amacı: Çalışanlara görevleri gereği verilen koruyucu ekipmanların teslim edildiğinin ve eğitiminin verildiğinin yasal olarak belgelenmesi.
+Gerekli Temel Alanlar: Çalışan Bilgileri, Görev Yeri, Teslim Edilen Ekipmanlar (Baret, Çelik Burunlu Ayakkabı, Emniyet Kemeri vb.), Ekipmanın Standardı/Markası, Teslim Tarihi, "Ekipmanın kullanımı ve bakımı hakkında eğitim aldım" Beyan Kutusu, Karşılıklı İmzalar.
+İlişkili Prosedür: İSG-PR-04 (Kişisel Koruyucu Donanım Kullanım Prosedürü)
+26. İSG-FR-04: Sıcak Çalışma İzin Formu (Hot Work Permit)
+Kullanım Amacı: Yangın riski barındıran kaynak, kesme veya taşlama gibi işlemlerin yapılabilmesi için sahada verilen geçici izin formu.
+Gerekli Temel Alanlar: Çalışmanın Yapılacağı Lokasyon, Çalışmayı Yapacak Personel/Yüklenici, Çalışma Tarihi ve Saat Aralığı, Alınan Yangın Önlemleri Kontrol Listesi (Yangın söndürücü hazır mı, yanıcı maddeler uzaklaştırıldı mı vb.), İSG Sorumlusu İmzası.
+İlişkili Politika: İSG-PO-01 ("Sıfır Kaza" ve Güvenli Çalışma Politikası)
+VI. Operasyon ve Denizcilik (OP) Formları
+27. OP-FR-01: Gemi Arıza Bildirim Formu (Defect Report)
+Kullanım Amacı: Güç gemilerinde (Powership) veya destek gemilerinde meydana gelen ekipman arızalarının teknik merkeze raporlanması.
+Gerekli Temel Alanlar: Gemi Adı, Arızalanan Ekipman/Sistem, Arıza Tarihi, Arızanın Operasyona Etkisi (Üretim durdu, kısmi duruş, etki yok), Yapılan İlk Teknik Müdahale, Gerekli Yedek Parça Listesi, Başmühendis İmzası.
+İlişkili Prosedür: OP-PR-01 (Gemi ve Santral Bakım-Onarım Prosedürü)
+28. OP-FR-02: Yakıt/Bunker İkmal Formu (Bunker Delivery Note)
+Kullanım Amacı: Gemilere yapılan kritik yakıt ikmali süreçlerinde yakıt miktarı, kalitesi ve güvenliğinin tescil edilmesi.
+Gerekli Temel Alanlar: İkmal Tarihi ve Limanı, Teslimatçı Firma/Barj Adı, Yakıt Türü (MGO, HFO vb.), Teslim Alınan Miktar (Metrik Ton), Yakıt Yoğunluğu ve Kükürt Oranı, Alınan Numune Şişe Numaraları, Kaptan/Başmühendis İmzası.
+İlişkili Talimat: OP-TA-03 (Yakıt Transferi Emniyet Talimatı)
+VII. Hukuk, Etik ve Uyum (HK) Formları
+29. HK-FR-01: Çıkar Çatışması Beyan Formu
+Kullanım Amacı: Tüm çalışanların, holding çıkarlarıyla çelişebilecek kişisel veya finansal ilişkilerini her yıl düzenli olarak beyan ettiği form.
+Gerekli Temel Alanlar: Çalışan Bilgileri, "Holdingin iş yaptığı herhangi bir firmada birinci derece yakınınız çalışıyor mu veya ortaklığı var mı?" sorusu, "Holding dışında ticari bir faaliyette bulunuyor musunuz?" sorusu, Detay Açıklama Alanı, Doğruluk Beyanı ve İmza.
+İlişkili Politika: HK-PO-01 (Yolsuzluk ve Rüşvet Karşıtı Politika)
+30. HK-FR-02: KVKK Veri Sahibi Başvuru Formu
+Kullanım Amacı: Dış şahısların (müşteri, ziyaretçi, aday vb.) holding bünyesinde tutulan kişisel verileri hakkında bilgi almak veya silinmesini talep etmek için kullandığı yasal form.
+Gerekli Temel Alanlar: Başvuru Sahibinin Adı-Soyadı, İletişim Bilgileri (Adres, Telefon, E-posta), Şirketimizle Olan İlişkisi (Müşteri, Eski Çalışan, İş Ortağı vb.), Talep Konusu (Veri öğrenme, düzeltme, silme), İmza.
+İlişkili Prosedür: HK-PR-01 (KVKK ve Veri Gizliliği Prosedürü)
