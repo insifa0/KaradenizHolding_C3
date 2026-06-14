@@ -7,12 +7,12 @@
 
 Karadeniz Holding bünyesindeki **8 departmana** ait **120+ kurumsal belge** (prosedür, politika, talimat, form) farklı klasörlerde dağınık halde tutulmaktadır. Çalışanlar ihtiyaç duydukları bilgiye ulaşmakta zorlanmakta, bu durum aşağıdaki sorunlara yol açmaktadır:
 
-| Sorun | Etkisi |
-|-------|--------|
-| ⏱️ Ortalama 8-15 dk / bilgi arama | Operasyonel verimlilik kaybı |
-| 📋 Aylık 250+ BT/İK destek bileti | Departman iş yükü artışı |
-| ❌ Yanlış/eski belge kullanımı | Uyumsuzluk riski |
-| 🔓 Gizli belgelere yetkisiz erişim riski | Kurumsal güvenlik açığı |
+| Sorun                                   | Etkisi                       |
+| --------------------------------------- | ---------------------------- |
+| ⏱️ Ortalama 8-15 dk / bilgi arama        | Operasyonel verimlilik kaybı |
+| 📋 Aylık 250+ BT/İK destek bileti        | Departman iş yükü artışı     |
+| ❌ Yanlış/eski belge kullanımı           | Uyumsuzluk riski             |
+| 🔓 Gizli belgelere yetkisiz erişim riski | Kurumsal güvenlik açığı      |
 
 ---
 
@@ -62,13 +62,13 @@ Mevcut yerel prototip, Azure AI Studio + Azure AI Search + Azure OpenAI + Entra 
 
 ## 📈 Ölçülen İş Değeri (Demo Verileri)
 
-| KPI | Değer | Hesaplama |
-|-----|-------|-----------|
-| ⏰ Kazanılan Zaman | **21.2 saat** | 254 sorgu × 5 dk tasarruf |
-| 🎫 Önlenen Destek Bileti | **101 adet** | Toplam sorgunun %40'ı |
-| 💰 Finansal Tasarruf | **$1,010** | Bilet başına $10 maliyet |
-| 👍 Yanıt Başarı Oranı | **%96.5** | 193 beğeni / 200 toplam |
-| 🔒 Engellenen Yetkisiz Erişim | **12 adet** | Rol tabanlı filtre |
+| KPI                          | Değer         | Hesaplama                 |
+| ---------------------------- | ------------- | ------------------------- |
+| ⏰ Kazanılan Zaman            | **21.2 saat** | 254 sorgu × 5 dk tasarruf |
+| 🎫 Önlenen Destek Bileti      | **101 adet**  | Toplam sorgunun %40'ı     |
+| 💰 Finansal Tasarruf          | **$1,010**    | Bilet başına $10 maliyet  |
+| 👍 Yanıt Başarı Oranı         | **%96.5**     | 193 beğeni / 200 toplam   |
+| 🔒 Engellenen Yetkisiz Erişim | **12 adet**   | Rol tabanlı filtre        |
 
 ---
 
@@ -88,12 +88,12 @@ Mevcut yerel prototip, Azure AI Studio + Azure AI Search + Azure OpenAI + Entra 
 
 ## 🗺️ Gelecek Yol Haritası
 
-| Aşama | Geliştirme | Öncelik |
-|-------|-----------|---------|
-| 🔐 Güvenlik | Azure Entra ID SSO entegrasyonu | Yüksek |
-| 🚀 Performans | Streaming cevap (SSE) | Orta |
-| 🔍 Arama | Hibrit Arama (BM25 + Vektör) | Orta |
-| ☁️ Bulut | Azure AI Studio geçişi | Planlanıyor |
+| Aşama        | Geliştirme                      | Öncelik     |
+| ------------ | ------------------------------- | ----------- |
+| 🔐 Güvenlik   | Azure Entra ID SSO entegrasyonu | Yüksek      |
+| 🚀 Performans | Streaming cevap (SSE)           | Orta        |
+| 🔍 Arama      | Hibrit Arama (BM25 + Vektör)    | Orta        |
+| ☁️ Bulut      | Azure AI Studio geçişi          | Planlanıyor |
 
 ---
 
@@ -116,15 +116,16 @@ http://localhost:8000
 
 ## 📂 Proje Belgeler Rehberi
 
-| Belge | İçerik |
-|-------|--------|
-| [ornek_soru_cevap_senaryolari.md](./ornek_soru_cevap_senaryolari.md) | 7 gerçekçi demo senaryosu |
-| [bilgi_mimarisi_şeması.md](./bilgi_mimarisi_şeması.md) | Sistem mimarisi, akış diyagramları |
-| [sistem_calisma_rehberi.md](./sistem_calisma_rehberi.md) | Teknik mimari ve çalışma prensibi |
-| [static/index.html](./static/index.html) | Canlı web arayüzü |
-| [app_api.py](./app_api.py) | FastAPI backend sunucusu |
-| [src/database.py](./src/database.py) | ChromaDB ve embedding motoru |
+| Belge                                                                | İçerik                             |
+| -------------------------------------------------------------------- | ---------------------------------- |
+| [ornek_soru_cevap_senaryolari.md](./ornek_soru_cevap_senaryolari.md) | 7 gerçekçi demo senaryosu          |
+| [bilgi_mimarisi_şeması.md](./bilgi_mimarisi_şeması.md)               | Sistem mimarisi, akış diyagramları |
+| [sistem_calisma_rehberi.md](./sistem_calisma_rehberi.md)             | Teknik mimari ve çalışma prensibi  |
+| [static/index.html](./static/index.html)                             | Canlı web arayüzü                  |
+| [app_api.py](./app_api.py)                                           | FastAPI backend sunucusu           |
+| [src/database.py](./src/database.py)                                 | ChromaDB ve embedding motoru       |
 
 ---
 
-*Karadeniz Holding — Kurumsal Bilgi Asistanı | Young Talent Program Demo | 2026*
+*Geliştirilme amacı: Karadeniz Holding — Kurumsal Bilgi Asistanı | Young Talent Program Demo | 2026*
+*Geliştirici: Yusuf Semih ÇİFTÇİ*
