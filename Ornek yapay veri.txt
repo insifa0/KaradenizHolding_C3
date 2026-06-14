@@ -16,7 +16,7 @@ Kilit Bilgiler: Yıllık eğitim ihtiyaç analizi formu doldurma süreci, dış 
 4. İK-PR-04: Yıllık Ücretli İzin ve Mazeret İzni Prosedürü
 Amaç: Çalışanların dinlenme haklarının ve mazeret durumlarındaki izin süreçlerinin yasal mevzuata uyumlu şekilde düzenlenmesi.
 Kapsam: Tüm lokasyonlardaki sözleşmeli personel.
-Kilit Bilgiler: İzin taleplerinin en az 5 iş günü önceden İK sistemi üzerinden yapılması gerekliliği, kıdeme göre hak edilen izin günleri ve mazeret (evlilik, ölüm, doğum vb.) izin süreleri limitleri.
+Kilit Bilgiler: İzin taleplerinin en az 5 iş günü önceden İK sistemi (MyKaradeniz HR portalı) üzerinden yapılması gerekliliği. Kıdeme göre hak edilen yıllık izin günleri: 1-5 yıl arası çalışanlar: 14 gün , 5-15 yıl arası çalışanlar: 20 gün , 15 yıldan fazla çalışanlar: 26 gün,  Mazeret izinleri (evlilik, ölüm, doğum vb.) için izin süreleri limitleri.
 5. İK-PR-05: İşten Ayrılış ve İlişik Kesme Prosedürü
 Amaç: İş akdi sona eren çalışanların çıkış süreçlerinin yasal, idari ve bilgi güvenliği açılarından sorunsuz tamamlanması.
 Kapsam: İstifa eden veya iş akdi feshedilen tüm çalışanlar.
@@ -152,7 +152,11 @@ Temel İlkeler: Ücret artışlarında ve primlerde objektif performans çıktı
 II. Bilgi Teknolojileri (BT) Politikaları
 7. BT-PO-01: Bilgi Güvenliği Politikası
 Amaç: Kurumsal verilerin gizliliğinin, bütünlüğünün ve erişilebilirliğinin garanti altına alınması.
-Temel İlkeler: Her çalışan, kullandığı cihazın ve eriştiği kurumsal verinin güvenliğinden sorumludur. Üçüncü partilerle veri paylaşımı ancak yasal onaylar ve gizlilik sözleşmeleri ile mümkündür.
+Temel İlkeler: Her çalışan, kullandığı cihazın ve eriştiği kurumsal verinin güvenliğinden sorumludur.
+Üçüncü partilerle veri paylaşımı ancak yasal onaylar ve gizlilik sözleşmeleri ile mümkündür.
+Güvenlik duvarı (firewall) politikası: Kurumsal ağ ile dış ağlar (internet) arasındaki tüm trafik, BT Güvenlik Ekibi tarafından yönetilen güvenlik duvarları üzerinden geçirilir. Varsayılan olarak tüm gelen bağlantılar reddedilir (deny-by-default); yalnızca iş gereksinimi onaylanmış port ve protokoller için istisna (whitelist) tanımlanır.
+Sunucu erişim politikası: Sunuculara erişim, yalnızca yetkilendirilmiş personel ve onaylı yönetim (admin) hesapları ile mümkündür. Tüm sunucu erişimleri loglanır ve düzenli olarak denetlenir. Uzaktan sunucu erişimi, kurumsal VPN (GlobalProtect) ve MFA doğrulaması olmadan yapılamaz.
+Güvenlik duvarı kuralları ve sunucu erişim yetkileri, en az 6 ayda bir BT Güvenlik Ekibi tarafından gözden geçirilir.
 8. BT-PO-02: Bulut Bilişim Teknolojileri Politikası
 Amaç: Güvenli, ölçeklenebilir ve modern BT altyapılarının oluşturulması.
 Temel İlkeler: Yeni devreye alınacak tüm uygulamalarda "öncelikli bulut" (cloud-first) yaklaşımı benimsenir. Kişisel verilerin barındırıldığı sistemlerde yerel veri egemenliği mevzuatlarına (KVKK vb.) tam uyum aranır.

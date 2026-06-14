@@ -112,6 +112,28 @@
         body.light-mode #status-text {
             color: #334155 !important;
         }
+
+        /* Toast light mode overrides */
+        body.light-mode #toast-container .bg-emerald-500\/10 {
+            background-color: rgba(16, 185, 129, 0.15) !important;
+            border-color: rgba(16, 185, 129, 0.3) !important;
+            color: #065f46 !important;
+        }
+        body.light-mode #toast-container .bg-red-500\/10 {
+            background-color: rgba(239, 68, 68, 0.15) !important;
+            border-color: rgba(239, 68, 68, 0.3) !important;
+            color: #991b1b !important;
+        }
+        body.light-mode #toast-container .bg-amber-500\/10 {
+            background-color: rgba(245, 158, 11, 0.15) !important;
+            border-color: rgba(245, 158, 11, 0.3) !important;
+            color: #92400e !important;
+        }
+        body.light-mode #toast-container .bg-primary\/10 {
+            background-color: rgba(0, 166, 179, 0.15) !important;
+            border-color: rgba(0, 166, 179, 0.3) !important;
+            color: #0c4a6e !important;
+        }
     </style>
     <script id="tailwind-config">
         tailwind.config = {
@@ -177,6 +199,9 @@
     </script>
 </head>
 <body class="bg-background text-on-background overflow-hidden h-screen font-sans">
+
+<!-- Toast Bildirim Kapsayıcısı -->
+<div id="toast-container" class="fixed top-6 left-1/2 -translate-x-1/2 z-50 flex flex-col gap-3 pointer-events-none w-full max-w-md px-4"></div>
 
 <!-- Canvas WebGL Shader Arka Planı -->
 <div class="absolute inset-0 w-full h-full z-0 opacity-45 pointer-events-none" style="display:block;">
@@ -274,96 +299,127 @@
             </div>
         </div>
         
-        <!-- API Anahtarı Girişi -->
-        <div class="space-y-4 mb-6">
-            <div class="space-y-1.5">
-                <label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1">Gemini API Anahtarı</label>
-                <input id="api-key-input" class="w-full bg-surface-container-lowest/50 border border-white/10 rounded-xl px-4 py-2.5 text-primary text-sm focus:outline-none focus:border-primary/50 focus:ring-0 transition-colors" placeholder="AIzaSy..." type="password"/>
-            </div>
-            
-            <div class="space-y-1.5">
-                <label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1">Simüle Edilen Rol</label>
-                <select id="role-selector" class="w-full bg-surface-container-lowest/50 border border-white/10 rounded-xl px-4 py-2.5 text-on-surface text-sm focus:outline-none focus:border-primary/50 focus:ring-0 transition-colors">
-                    <option value="Tüm Çalışanlar">Tüm Çalışanlar</option>
-                    <option value="Teknik Ekip">Teknik Ekip</option>
-                    <option value="BT Departmanı">BT Departmanı</option>
-                    <option value="Finans Departmanı">Finans Departmanı</option>
-                    <option value="Yönetim">Yönetim</option>
-                </select>
-            </div>
-            
-            <button id="btn-init" onclick="initializeSystem(false)" class="w-full py-3 bg-primary text-on-primary font-bold rounded-xl cyan-glow hover:scale-[1.02] active:scale-95 transition-all duration-200 flex items-center justify-center gap-2">
-                <span class="material-symbols-outlined text-xl">power_settings_new</span>
-                Sistemi Başlat
-            </button>
-            <button id="btn-rebuild" onclick="initializeSystem(true)" class="w-full py-2.5 bg-white/5 hover:bg-white/10 text-on-surface text-sm font-semibold rounded-xl border border-white/10 active:scale-95 transition-all duration-200 hidden items-center justify-center gap-2">
-                <span class="material-symbols-outlined text-lg">refresh</span>
-                Tabanı Yeniden Kur
-            </button>
-            
-            <!-- Yükleme Göstergesi -->
-            <div id="init-loader" class="hidden mt-3 p-3 bg-white/5 border border-white/10 rounded-xl space-y-2">
-                <div class="flex justify-between items-center text-[10px] uppercase tracking-wider text-on-surface-variant font-bold">
-                    <span>Sistem Yükleniyor</span>
-                    <span id="init-percent">0%</span>
+        <!-- Aktif Kullanıcı Rol Göstergesi -->
+        <div id="active-role-card" class="mb-5 p-3 bg-white/5 border border-white/5 rounded-xl">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-primary/15 flex items-center justify-center border border-primary/20">
+                    <span id="role-icon" class="material-symbols-outlined text-primary text-xl">person</span>
                 </div>
-                <div class="w-full bg-surface h-1.5 rounded-full overflow-hidden">
-                    <div id="init-progress" class="bg-primary h-full w-0 transition-all duration-300"></div>
-                </div>
-                <p id="init-status" class="text-[10px] text-on-surface-variant italic text-center">Başlatılıyor...</p>
-            </div>
-        </div>
-
-        <!-- Bölücü Çizgi -->
-        <hr class="border-white/10 my-2" />
-
-        <!-- Gelişmiş Ayarlar (Jüri için kapatılabilir) -->
-        <div class="mb-4">
-            <button onclick="toggleSidebarExpander('sidebar-settings')" class="w-full py-2 flex justify-between items-center text-xs font-bold uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors px-1">
-                <span>🔧 Gelişmiş / Yönetici Ayarları</span>
-                <span id="sidebar-settings-arrow" class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
-            </button>
-            <div id="sidebar-settings" class="hidden space-y-4 mt-3 bg-white/5 border border-white/5 rounded-xl p-3">
-                <div class="space-y-1">
-                    <div class="flex justify-between text-[11px] text-on-surface-variant">
-                        <span>Cevap Yaratıcılığı (Temp)</span>
-                        <span id="temp-val-display" class="font-bold text-primary">0.3</span>
-                    </div>
-                    <input id="slider-temp" type="range" min="0" max="1" step="0.1" value="0.3" oninput="updateSettingsDisplay()" class="w-full accent-primary bg-surface border-none"/>
-                </div>
-                <div class="space-y-1">
-                    <div class="flex justify-between text-[11px] text-on-surface-variant">
-                        <span>Arama Derinliği (k döküman)</span>
-                        <span id="k-val-display" class="font-bold text-primary">3</span>
-                    </div>
-                    <input id="slider-k" type="range" min="1" max="5" step="1" value="3" oninput="updateSettingsDisplay()" class="w-full accent-primary bg-surface border-none"/>
+                <div class="flex-1 min-w-0">
+                    <p class="text-[10px] uppercase tracking-wider text-on-surface-variant font-bold">Aktif Rol</p>
+                    <p id="role-display-name" class="text-sm font-bold text-on-surface truncate">Tüm Çalışanlar</p>
                 </div>
             </div>
         </div>
 
-        <!-- İstatistikler -->
-        <div id="stats-panel" class="hidden mb-4">
-            <button onclick="toggleSidebarExpander('sidebar-stats')" class="w-full py-2 flex justify-between items-center text-xs font-bold uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors px-1">
-                <span>📊 Bilgi Tabanı Metrikleri</span>
-                <span id="sidebar-stats-arrow" class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
-            </button>
-            <div id="sidebar-stats" class="hidden space-y-3 mt-2 bg-white/5 border border-white/5 rounded-xl p-3">
-                <div class="text-center bg-surface-container-lowest/50 rounded-lg py-2 border border-white/5">
-                    <p id="stat-total" class="text-2xl font-black text-primary">0</p>
-                    <p class="text-[9px] uppercase tracking-wider text-on-surface-variant">Yüklü Döküman</p>
+        <!-- Kaydırılabilir Orta Bölüm -->
+        <div class="flex-1 overflow-y-auto pr-1 space-y-4 mb-4 min-h-0">
+            <!-- Rol Seçimi ve Kontrol -->
+            <div class="space-y-4">
+                <div class="space-y-1.5">
+                    <label class="text-xs font-bold uppercase tracking-wider text-on-surface-variant px-1">Simüle Edilen Rol</label>
+                    <select id="role-selector" onchange="updateRoleDisplay()" class="w-full bg-surface-container-lowest/50 border border-white/10 rounded-xl px-4 py-2.5 text-on-surface text-sm focus:outline-none focus:border-primary/50 focus:ring-0 transition-colors">
+                        <option value="Tüm Çalışanlar">Tüm Çalışanlar</option>
+                        <option value="Teknik Ekip">Teknik Ekip</option>
+                        <option value="BT Departmanı">BT Departmanı</option>
+                        <option value="Finans Departmanı">Finans Departmanı</option>
+                        <option value="Yönetim">Yönetim</option>
+                    </select>
                 </div>
-                <div class="text-[11px] space-y-1 text-on-surface-variant">
-                    <p class="font-semibold text-on-surface border-b border-white/10 pb-0.5">📁 Döküman Tipleri</p>
-                    <div class="flex justify-between"><span>📋 Prosedür:</span><span id="stat-type-pr" class="font-bold text-on-surface">0</span></div>
-                    <div class="flex justify-between"><span>📜 Politika:</span><span id="stat-type-po" class="font-bold text-on-surface">0</span></div>
-                    <div class="flex justify-between"><span>📝 Talimat:</span><span id="stat-type-ta" class="font-bold text-on-surface">0</span></div>
-                    <div class="flex justify-between"><span>📄 Form:</span><span id="stat-type-fr" class="font-bold text-on-surface">0</span></div>
+                
+                <button id="btn-init" onclick="initializeSystem(false)" class="w-full py-3 bg-primary text-on-primary font-bold rounded-xl cyan-glow hover:scale-[1.02] active:scale-95 transition-all duration-200 flex items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-xl">power_settings_new</span>
+                    Sistemi Başlat
+                </button>
+                <button id="btn-rebuild" onclick="initializeSystem(true)" class="w-full py-2.5 bg-white/5 hover:bg-white/10 text-on-surface text-sm font-semibold rounded-xl border border-white/10 active:scale-95 transition-all duration-200 hidden items-center justify-center gap-2">
+                    <span class="material-symbols-outlined text-lg">refresh</span>
+                    Tabanı Yeniden Kur
+                </button>
+                
+                <!-- Yükleme Göstergesi -->
+                <div id="init-loader" class="hidden mt-3 p-3 bg-white/5 border border-white/10 rounded-xl space-y-2">
+                    <div class="flex justify-between items-center text-[10px] uppercase tracking-wider text-on-surface-variant font-bold">
+                        <span>Sistem Yükleniyor</span>
+                        <span id="init-percent">0%</span>
+                    </div>
+                    <div class="w-full bg-surface h-1.5 rounded-full overflow-hidden">
+                        <div id="init-progress" class="bg-primary h-full w-0 transition-all duration-300"></div>
+                    </div>
+                    <p id="init-status" class="text-[10px] text-on-surface-variant italic text-center">Başlatılıyor...</p>
+                </div>
+            </div>
+
+            <!-- Oturum Sayacı -->
+            <div id="session-counter" class="hidden p-3 bg-white/5 border border-white/5 rounded-xl">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary text-lg">chat_bubble</span>
+                        <span class="text-[11px] text-on-surface-variant font-semibold">Bu Oturum</span>
+                    </div>
+                    <span id="session-msg-count" class="text-sm font-black text-primary">0 mesaj</span>
+                </div>
+            </div>
+
+            <!-- Bölücü Çizgi -->
+            <hr class="border-white/10" />
+
+            <!-- Gelişmiş Ayarlar (Jüri için kapatılabilir) -->
+            <div>
+                <button onclick="toggleSidebarExpander('sidebar-settings')" class="w-full py-2 flex justify-between items-center text-xs font-bold uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors px-1">
+                    <span>🔧 Gelişmiş / Yönetici Ayarları</span>
+                    <span id="sidebar-settings-arrow" class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+                </button>
+                <div id="sidebar-settings" class="hidden space-y-4 mt-3 bg-white/5 border border-white/5 rounded-xl p-3">
+                    <!-- API Anahtarı (Yönetici Ayarlarına Taşındı) -->
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-[11px] text-on-surface-variant">
+                            <span>Gemini API Anahtarı</span>
+                            <span class="material-symbols-outlined text-xs text-primary">key</span>
+                        </div>
+                        <input id="api-key-input" class="w-full bg-surface-container-lowest/50 border border-white/10 rounded-lg px-3 py-2 text-primary text-xs focus:outline-none focus:border-primary/50 focus:ring-0 transition-colors font-mono" placeholder="AIzaSy..." type="password"/>
+                    </div>
+                    <hr class="border-white/5"/>
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-[11px] text-on-surface-variant">
+                            <span>Cevap Yaratıcılığı (Temp)</span>
+                            <span id="temp-val-display" class="font-bold text-primary">0.3</span>
+                        </div>
+                        <input id="slider-temp" type="range" min="0" max="1" step="0.1" value="0.3" oninput="updateSettingsDisplay()" class="w-full accent-primary bg-surface border-none"/>
+                    </div>
+                    <div class="space-y-1">
+                        <div class="flex justify-between text-[11px] text-on-surface-variant">
+                            <span>Arama Derinliği (k döküman)</span>
+                            <span id="k-val-display" class="font-bold text-primary">3</span>
+                        </div>
+                        <input id="slider-k" type="range" min="1" max="5" step="1" value="3" oninput="updateSettingsDisplay()" class="w-full accent-primary bg-surface border-none"/>
+                    </div>
+                </div>
+            </div>
+
+            <!-- İstatistikler -->
+            <div id="stats-panel" class="hidden">
+                <button onclick="toggleSidebarExpander('sidebar-stats')" class="w-full py-2 flex justify-between items-center text-xs font-bold uppercase tracking-wider text-on-surface-variant hover:text-primary transition-colors px-1">
+                    <span>📊 Bilgi Tabanı Metrikleri</span>
+                    <span id="sidebar-stats-arrow" class="material-symbols-outlined text-sm">keyboard_arrow_down</span>
+                </button>
+                <div id="sidebar-stats" class="hidden space-y-3 mt-2 bg-white/5 border border-white/5 rounded-xl p-3">
+                    <div class="text-center bg-surface-container-lowest/50 rounded-lg py-2 border border-white/5">
+                        <p id="stat-total" class="text-2xl font-black text-primary">0</p>
+                        <p class="text-[9px] uppercase tracking-wider text-on-surface-variant">Yüklü Döküman</p>
+                    </div>
+                    <div class="text-[11px] space-y-1 text-on-surface-variant">
+                        <p class="font-semibold text-on-surface border-b border-white/10 pb-0.5">📁 Döküman Tipleri</p>
+                        <div class="flex justify-between"><span>📋 Prosedür:</span><span id="stat-type-pr" class="font-bold text-on-surface">0</span></div>
+                        <div class="flex justify-between"><span>📜 Politika:</span><span id="stat-type-po" class="font-bold text-on-surface">0</span></div>
+                        <div class="flex justify-between"><span>📝 Talimat:</span><span id="stat-type-ta" class="font-bold text-on-surface">0</span></div>
+                        <div class="flex justify-between"><span>📄 Form:</span><span id="stat-type-fr" class="font-bold text-on-surface">0</span></div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- Sohbet Temizleme ve Aktarma -->
-        <div class="mt-auto space-y-2">
+        <div class="mt-auto space-y-2 flex-shrink-0 pt-4 border-t border-white/10">
             <button id="btn-export" onclick="exportChatHistory()" class="w-full py-2.5 bg-white/5 hover:bg-white/10 text-on-surface text-xs font-semibold rounded-xl border border-white/10 active:scale-95 transition-all duration-200 hidden items-center justify-center gap-2">
                 <span class="material-symbols-outlined text-lg">download</span>
                 Sohbeti Dışa Aktar (MD)
@@ -372,6 +428,11 @@
                 <span class="material-symbols-outlined text-lg">delete</span>
                 Sohbeti Temizle
             </button>
+            <!-- Alt Bilgi -->
+            <div class="pt-3 border-t border-white/5 text-center">
+                <p class="text-[9px] text-on-surface-variant/40 uppercase tracking-widest font-bold">Karadeniz Holding © 2026</p>
+                <p class="text-[9px] text-on-surface-variant/30 mt-0.5">RAG v2.0 • Gemini Flash • ChromaDB</p>
+            </div>
         </div>
     </aside>
 
@@ -415,8 +476,77 @@
                     </div>
                     <h2 class="font-headline text-3xl font-bold text-on-surface">Karadeniz Holding Kurumsal Bilgi Asistanı</h2>
                     <p class="text-on-surface-variant max-w-lg text-sm leading-relaxed">
-                        Sistem veri tabanını sol paneldeki <strong>Gemini API anahtarınızı</strong> girip <strong>"🚀 Sistemi Başlat"</strong> butonuna tıklayarak başlatabilirsiniz. 120 dökümana güvenli erişim portalı.
+                        Sistemi sol paneldeki <strong>"Gelişmiş Ayarlar"</strong> bölümünden API anahtarınızı girip <strong>"🚀 Sistemi Başlat"</strong> butonuna tıklayarak başlatabilirsiniz. 120 dökümana güvenli erişim portalı.
                     </p>
+                </div>
+
+                <!-- Örnek Sorular (Init sonrası gösterilir, ilk mesajda kaybolur) -->
+                <div id="example-questions-pane" class="hidden max-w-4xl mx-auto">
+                    <div class="flex flex-col items-center text-center space-y-6 my-12">
+                        <div class="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center border border-primary/20">
+                            <span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1">smart_toy</span>
+                        </div>
+                        <div>
+                            <h3 class="font-headline text-xl font-bold text-on-surface">Merhaba! Size nasıl yardımcı olabilirim?</h3>
+                            <p class="text-on-surface-variant text-sm mt-2">Aşağıdaki örnek sorulardan birini tıklayın veya kendi sorunuzu yazın.</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 w-full mt-4">
+                            <button onclick="askExampleQuestion(this)" class="example-q-btn glass-card text-left px-5 py-4 rounded-2xl hover:border-primary/30 hover:bg-primary/5 transition-all duration-200 group cursor-pointer">
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary/60 group-hover:text-primary text-lg mt-0.5">schedule</span>
+                                    <div>
+                                        <p class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Yıllık izin hakkım kaç gün?</p>
+                                        <p class="text-[11px] text-on-surface-variant/60 mt-1">İK · İzin Yönetimi</p>
+                                    </div>
+                                </div>
+                            </button>
+                            <button onclick="askExampleQuestion(this)" class="example-q-btn glass-card text-left px-5 py-4 rounded-2xl hover:border-primary/30 hover:bg-primary/5 transition-all duration-200 group cursor-pointer">
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary/60 group-hover:text-primary text-lg mt-0.5">vpn_lock</span>
+                                    <div>
+                                        <p class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">VPN'e nasıl bağlanabilirim?</p>
+                                        <p class="text-[11px] text-on-surface-variant/60 mt-1">BT · Uzak Erişim</p>
+                                    </div>
+                                </div>
+                            </button>
+                            <button onclick="askExampleQuestion(this)" class="example-q-btn glass-card text-left px-5 py-4 rounded-2xl hover:border-primary/30 hover:bg-primary/5 transition-all duration-200 group cursor-pointer">
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary/60 group-hover:text-primary text-lg mt-0.5">local_shipping</span>
+                                    <div>
+                                        <p class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Satın alma onay süreci nasıl işliyor?</p>
+                                        <p class="text-[11px] text-on-surface-variant/60 mt-1">SA · Tedarik</p>
+                                    </div>
+                                </div>
+                            </button>
+                            <button onclick="askExampleQuestion(this)" class="example-q-btn glass-card text-left px-5 py-4 rounded-2xl hover:border-primary/30 hover:bg-primary/5 transition-all duration-200 group cursor-pointer">
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary/60 group-hover:text-primary text-lg mt-0.5">lock</span>
+                                    <div>
+                                        <p class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Şifre güvenliği kuralları nelerdir?</p>
+                                        <p class="text-[11px] text-on-surface-variant/60 mt-1">BT · Güvenlik</p>
+                                    </div>
+                                </div>
+                            </button>
+                            <button onclick="askExampleQuestion(this)" class="example-q-btn glass-card text-left px-5 py-4 rounded-2xl hover:border-primary/30 hover:bg-primary/5 transition-all duration-200 group cursor-pointer">
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary/60 group-hover:text-primary text-lg mt-0.5">emergency</span>
+                                    <div>
+                                        <p class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Yangın veya deprem durumunda ne yapmalıyım?</p>
+                                        <p class="text-[11px] text-on-surface-variant/60 mt-1">İSG · Acil Durum</p>
+                                    </div>
+                                </div>
+                            </button>
+                            <button onclick="askExampleQuestion(this)" class="example-q-btn glass-card text-left px-5 py-4 rounded-2xl hover:border-primary/30 hover:bg-primary/5 transition-all duration-200 group cursor-pointer">
+                                <div class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary/60 group-hover:text-primary text-lg mt-0.5">school</span>
+                                    <div>
+                                        <p class="text-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Eğitim ve gelişim programlarına nasıl katılırım?</p>
+                                        <p class="text-[11px] text-on-surface-variant/60 mt-1">İK · Eğitim</p>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 
                 <!-- Konuşma Balonları Listesi -->
@@ -853,6 +983,60 @@ JavaScript Kodları (İnteraktif RAG Entegrasyonu)
         }
     }
 
+    // ── Özel Premium Toast Bildirim Sistemi ──
+    function showToast(message, type = 'success', duration = 5000) {
+        const container = document.getElementById("toast-container");
+        if (!container) return;
+
+        const toast = document.createElement("div");
+        toast.className = `pointer-events-auto flex items-center gap-3 px-5 py-3.5 rounded-xl border backdrop-blur-xl shadow-[0_12px_40px_rgba(0,0,0,0.4)] transition-all duration-300 translate-y-[-20px] opacity-0 w-full`;
+        
+        if (type === 'success') {
+            toast.className += " bg-emerald-500/10 border-emerald-500/25 text-emerald-400";
+        } else if (type === 'error') {
+            toast.className += " bg-red-500/10 border-red-500/25 text-red-400";
+        } else if (type === 'warning') {
+            toast.className += " bg-amber-500/10 border-amber-500/25 text-amber-400";
+        } else {
+            toast.className += " bg-primary/10 border-primary/25 text-primary";
+        }
+
+        const iconMap = {
+            'success': 'check_circle',
+            'error': 'cancel',
+            'warning': 'warning',
+            'info': 'info'
+        };
+        const icon = iconMap[type] || 'info';
+
+        toast.innerHTML = `
+            <span class="material-symbols-outlined text-xl flex-shrink-0">${icon}</span>
+            <div class="flex-1 min-w-0">
+                <p class="text-xs font-semibold leading-relaxed">${message}</p>
+            </div>
+            <button onclick="this.parentElement.remove()" class="text-current opacity-60 hover:opacity-100 transition-opacity p-0.5 ml-auto flex items-center justify-center rounded-lg hover:bg-white/5">
+                <span class="material-symbols-outlined text-base">close</span>
+            </button>
+        `;
+
+        container.appendChild(toast);
+
+        // Slide in
+        setTimeout(() => {
+            toast.classList.remove("translate-y-[-20px]", "opacity-0");
+        }, 50);
+
+        // Slide out and remove
+        setTimeout(() => {
+            if (toast && toast.parentElement) {
+                toast.classList.add("opacity-0", "translate-y-[-20px]");
+                setTimeout(() => {
+                    toast.remove();
+                }, 300);
+            }
+        }, duration);
+    }
+
     // ── Slider Ayarlarının Gösterimini Güncelle ──
     function updateSettingsDisplay() {
         const temp = document.getElementById("slider-temp").value;
@@ -865,7 +1049,7 @@ JavaScript Kodları (İnteraktif RAG Entegrasyonu)
     async function initializeSystem(forceRebuild = false) {
         const apiKey = document.getElementById("api-key-input").value.trim();
         if (!apiKey) {
-            alert("⚠️ Lütfen geçerli bir Gemini API anahtarı girin!");
+            showToast("Lütfen geçerli bir Gemini API anahtarı girin!", "warning");
             return;
         }
 
@@ -939,27 +1123,29 @@ JavaScript Kodları (İnteraktif RAG Entegrasyonu)
                 document.getElementById("btn-clear").classList.remove("hidden");
                 document.getElementById("btn-clear").style.display = "flex";
 
-                // Hoş Geldiniz ekranını kapatıp sohbeti aç
+                // Hoş Geldiniz ekranını kapatıp örnek soruları göster
                 document.getElementById("welcome-pane").classList.add("hidden");
+                document.getElementById("example-questions-pane").classList.remove("hidden");
                 document.getElementById("chat-messages").classList.remove("hidden");
                 document.getElementById("chat-input-pane").classList.remove("hidden");
                 document.getElementById("chat-input-pane").style.display = "block";
+                document.getElementById("session-counter").classList.remove("hidden");
 
-                // Kısa bir gecikme ile yükleyiciyi gizle ve alert ver
+                // Kısa bir gecikme ile yükleyiciyi gizle ve bildirim göster
                 setTimeout(() => {
                     loader.classList.add("hidden");
-                    alert(`✅ ${data.message}`);
+                    showToast(data.message, "success");
                 }, 800);
                 
                 // Kütüphaneyi tekrar çek (veya güncelle)
                 fetchDocuments();
             } else {
                 loader.classList.add("hidden");
-                alert(`❌ Başlatma Hatası: ${data.detail || "Bilinmeyen hata"}`);
+                showToast(`Başlatma Hatası: ${data.detail || "Bilinmeyen hata"}`, "error");
             }
         } catch (e) {
             loader.classList.add("hidden");
-            alert(`❌ Sunucu hatası oluştu: ${e.message}`);
+            showToast(`Sunucu hatası oluştu: ${e.message}`, "error");
         } finally {
             btn.innerHTML = origText;
             btn.disabled = false;
@@ -1081,12 +1267,16 @@ JavaScript Kodları (İnteraktif RAG Entegrasyonu)
 
         const apiKey = document.getElementById("api-key-input").value.trim();
         if (!apiKey) {
-            alert("⚠️ Lütfen önce API anahtarınızı girin ve Sistemi Başlatın!");
+            showToast("Lütfen önce API anahtarınızı girin ve Sistemi Başlatın!", "warning");
             return;
         }
 
         // Giriş alanını temizle
         inputEl.value = "";
+
+        // Örnek soru kartlarını gizle (ilk mesajda)
+        const exPane = document.getElementById("example-questions-pane");
+        if (exPane) exPane.classList.add("hidden");
 
         // Kullanıcı mesajını ekle
         appendMessage("user", queryText);
@@ -1249,6 +1439,10 @@ JavaScript Kodları (İnteraktif RAG Entegrasyonu)
 
         // Geçmiş dizisine ekle
         chatMessages.push({ role, content: text, sources });
+
+        // Oturum sayacını güncelle
+        const counterEl = document.getElementById("session-msg-count");
+        if (counterEl) counterEl.textContent = `${chatMessages.length} mesaj`;
     }
 
     function appendLoadingMessage() {
@@ -1363,6 +1557,32 @@ JavaScript Kodları (İnteraktif RAG Entegrasyonu)
             icon.classList.add("text-yellow-400");
         }
     }
+    // ── Örnek Soru Kartı Tıklama ──
+    function askExampleQuestion(btn) {
+        const questionText = btn.querySelector('p.text-sm').textContent;
+        const inputEl = document.getElementById("chat-input");
+        inputEl.value = questionText;
+        sendChatMessage();
+    }
+
+    // ── Rol Göstergesi Güncelleme ──
+    function updateRoleDisplay() {
+        const role = document.getElementById("role-selector").value;
+        const displayEl = document.getElementById("role-display-name");
+        const iconEl = document.getElementById("role-icon");
+
+        if (displayEl) displayEl.textContent = role;
+
+        const iconMap = {
+            "Tüm Çalışanlar": "groups",
+            "Teknik Ekip": "engineering",
+            "BT Departmanı": "computer",
+            "Finans Departmanı": "account_balance",
+            "Yönetim": "admin_panel_settings",
+        };
+        if (iconEl) iconEl.textContent = iconMap[role] || "person";
+    }
+
 </script>
 </body>
 </html>
